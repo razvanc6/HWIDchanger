@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using MetroFramework.Controls;
 using Microsoft.Toolkit.Uwp.Notifications;
 using System.Media;
+using System.IO;
 
 namespace SecHex_GUI
 {
@@ -29,137 +30,11 @@ namespace SecHex_GUI
             timer.Start();
         }
 
-
-        private async void AnimateButtonsBorderColor(params SiticoneButton[] buttons)
-        {
-            if (isAnimationRunning)
-                return;
-
-            isAnimationRunning = true;
-
-            float hue = 0;
-            float saturation = 1;
-            float value = 1;
-            int animationDuration = 500;
-            int animationSteps = 100;
-            float colorSpeed = 0.2f;
-
-            while (isAnimationRunning)
-            {
-                for (int i = 0; i <= animationSteps; i++)
-                {
-                    if (!isAnimationRunning)
-                        break;
-
-                    float progress = (float)i / animationSteps;
-                    float currentHue = hue + progress * 360 * colorSpeed;
-                    Color currentColor = ColorFromHsv(currentHue, saturation, value);
-
-                    foreach (SiticoneButton button in buttons)
-                    {
-                        button.BorderThickness = 1;
-                        button.BorderColor = currentColor;
-                    }
-
-                    await Task.Delay((int)(animationDuration / (animationSteps * colorSpeed)));
-                }
-
-                if (!isAnimationRunning)
-                    break;
-
-                Color startColor = ColorFromHsv(hue + 360 * colorSpeed, saturation, value);
-                Color endColor = Color.Red;
-
-                for (int i = 0; i <= animationSteps; i++)
-                {
-                    if (!isAnimationRunning)
-                        break;
-
-                    float progress = (float)i / animationSteps;
-                    Color currentColor = InterpolateColor(startColor, endColor, progress);
-
-                    foreach (SiticoneButton button in buttons)
-                    {
-                        button.BorderThickness = 1;
-                        button.BorderColor = currentColor;
-                    }
-
-                    await Task.Delay((int)(animationDuration / (animationSteps * colorSpeed)));
-                }
-            }
-        }
-
-        private Color ColorFromHsv(float hue, float saturation, float value)
-        {
-            int rgbMax = 255;
-            float chroma = value * saturation;
-            float huePrime = hue / 60f;
-            float x = chroma * (1 - Math.Abs(huePrime % 2 - 1));
-            float m = value - chroma;
-
-            float red = 0, green = 0, blue = 0;
-
-            if (huePrime >= 0 && huePrime < 1)
-            {
-                red = chroma;
-                green = x;
-            }
-            else if (huePrime >= 1 && huePrime < 2)
-            {
-                red = x;
-                green = chroma;
-            }
-            else if (huePrime >= 2 && huePrime < 3)
-            {
-                green = chroma;
-                blue = x;
-            }
-            else if (huePrime >= 3 && huePrime < 4)
-            {
-                green = x;
-                blue = chroma;
-            }
-            else if (huePrime >= 4 && huePrime < 5)
-            {
-                red = x;
-                blue = chroma;
-            }
-            else if (huePrime >= 5 && huePrime < 6)
-            {
-                red = chroma;
-                blue = x;
-            }
-
-            int r = (int)Math.Round((red + m) * rgbMax);
-            int g = (int)Math.Round((green + m) * rgbMax);
-            int b = (int)Math.Round((blue + m) * rgbMax);
-
-            return Color.FromArgb(r, g, b);
-        }
-
-        private Color InterpolateColor(Color startColor, Color endColor, float progress)
-        {
-            int r = (int)(startColor.R + (endColor.R - startColor.R) * progress);
-            int g = (int)(startColor.G + (endColor.G - startColor.G) * progress);
-            int b = (int)(startColor.B + (endColor.B - startColor.B) * progress);
-
-            return Color.FromArgb(r, g, b);
-        }
-
-
-        private void StopButtonAnimation(params SiticoneButton[] buttons)
-        {
-            isAnimationRunning = false;
-            timer.Stop();
-
-            foreach (SiticoneButton button in buttons)
-            {
-
-                button.BorderThickness = 1;
-                button.BorderColor = Color.White;
-            }
-        }
-
+        string globalSerialNumber = null;
+        string globalIdentifier = null;
+        string globalGUID = null;
+        string globalMachineGuid = null;
+        string globalSerialNumberKey = null;
         private bool isAfricaToggleOn = false;
         private south_africa WindowSouthAfrica;
         private logs logWindow;
@@ -233,31 +108,6 @@ namespace SecHex_GUI
             }
         }
 
-        public static void LocalAreaConection(string adapterId, bool enable = true)
-        {
-            string interfaceName = "Ethernet";
-            foreach (NetworkInterface i in NetworkInterface.GetAllNetworkInterfaces())
-            {
-                if (i.Id == adapterId)
-                {
-                    interfaceName = i.Name;
-                    break;
-                }
-            }
-
-            string control;
-            if (enable)
-                control = "enable";
-            else
-                control = "disable";
-
-            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("netsh", $"interface set interface \"{interfaceName}\" {control}");
-            System.Diagnostics.Process p = new System.Diagnostics.Process();
-            p.StartInfo = psi;
-            p.Start();
-            p.WaitForExit();
-        }
-
 
         public static string RandomId(int length)
         {
@@ -272,39 +122,6 @@ namespace SecHex_GUI
 
             return result;
         }
-
-
-        private string RandomIdprid(int length)
-        {
-            const string digits = "0123456789";
-            const string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var random = new Random();
-            var id = new char[length];
-            int dashIndex = 5;
-            int letterIndex = 17;
-            for (int i = 0; i < length; i++)
-            {
-                if (i == dashIndex)
-                {
-                    id[i] = '-';
-                    dashIndex += 6;
-                }
-                else if (i == letterIndex)
-                {
-                    id[i] = letters[random.Next(letters.Length)];
-                }
-                else if (i == letterIndex + 1)
-                {
-                    id[i] = letters[random.Next(letters.Length)];
-                }
-                else
-                {
-                    id[i] = digits[random.Next(digits.Length)];
-                }
-            }
-            return new string(id);
-        }
-
 
         private string RandomIdprid2(int length)
         {
@@ -373,17 +190,12 @@ namespace SecHex_GUI
 
             if (registryEntriesExist)
             {
-                disk_Click(sender, e);
-                mac_Click(sender, e);
-                GUID_Click(sender, e);
-                winid_Click(sender, e);
-                pcname_Click(sender, e);
-                display_Click(sender, e);
-                efi_Click(sender, e);
-                siticoneButton1_Click(sender, e);
-                product_Click(sender, e);
-                BIOSReleaseDate_Click(sender, e);
-                MachineId_Click(sender, e);
+                disk_Click(sender, e); //asta
+                GUID_Click(sender, e); //asta
+                winid_Click(sender, e); //asta
+                profile_Save(sender, e);
+
+
 
                 ShowNotification("All functions executed successfully.", NotificationType.Success);
             }
@@ -449,6 +261,8 @@ namespace SecHex_GUI
                                                     string logBefore = $"DiskPeripheral {bus}\\Target Id 0\\Logical Unit Id 0 - Identifier: {identifierBefore}, SerialNumber: {serialNumberBefore}";
                                                     string logAfter = $"DiskPeripheral {bus}\\Target Id 0\\Logical Unit Id 0 - Identifier: {identifierAfter}, SerialNumber: {serialNumberAfter}";
                                                     SaveLogs("disk", logBefore, logAfter);
+                                                    globalSerialNumber = serialNumberAfter;
+                                                    globalIdentifier = identifierAfter;
 
                                                     ScsuiBus.SetValue("DeviceIdentifierPage", Encoding.UTF8.GetBytes(serialNumberAfter));
                                                     ScsuiBus.SetValue("Identifier", identifierAfter);
@@ -496,6 +310,7 @@ namespace SecHex_GUI
                                                 string logBefore = $"Hard Disk {diskId} - SerialNumber: {serialNumberBefore}";
                                                 string logAfter = $"Hard Disk {diskId} - SerialNumber: {serialNumberAfter}";
                                                 SaveLogs("disk", logBefore, logAfter);
+                                                globalSerialNumberKey = serialNumberAfter;
 
                                                 disk.SetValue("SerialNumber", serialNumberAfter);
                                             }
@@ -609,9 +424,11 @@ namespace SecHex_GUI
                     {
                         string logBefore = "HwProfileGuid - Before: " + HardwareGUID.GetValue("HwProfileGuid");
                         HardwareGUID.DeleteValue("HwProfileGuid");
-                        HardwareGUID.SetValue("HwProfileGuid", Guid.NewGuid().ToString());
+                        string newguid = Guid.NewGuid().ToString();
+                        HardwareGUID.SetValue("HwProfileGuid", newguid);
                         string logAfter = "HwProfileGuid - After: " + HardwareGUID.GetValue("HwProfileGuid");
                         SaveLogs("guid", logBefore, logAfter);
+                        globalGUID = newguid;
                     }
                     else
                     {
@@ -621,35 +438,6 @@ namespace SecHex_GUI
                 }
 
                 ShowNotification("HwProfile successfully spoofed.", NotificationType.Success);
-            }
-            catch (Exception ex)
-            {
-                ShowNotification("An error occurred: " + ex.Message, NotificationType.Error);
-            }
-        }
-
-
-        private void MachineId_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (RegistryKey MachineId = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\SQMClient", true))
-                {
-                    if (MachineId != null)
-                    {
-                        string logBefore = "MachineId - Before: " + MachineId.GetValue("MachineId");
-                        MachineId.DeleteValue("MachineId");
-                        MachineId.SetValue("MachineId", Guid.NewGuid().ToString());
-                        string logAfter = "MachineId - After: " + MachineId.GetValue("MachineId");
-                        SaveLogs("guid", logBefore, logAfter);
-
-                        ShowNotification("MachineID successfully spoofed.", NotificationType.Success);
-                    }
-                    else
-                    {
-                        ShowNotification("MachineId key not found.", NotificationType.Error);
-                    }
-                }
             }
             catch (Exception ex)
             {
@@ -680,35 +468,6 @@ namespace SecHex_GUI
         }
 
 
-        private void BIOSReleaseDate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (RegistryKey systemInfoKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\SystemInformation", true))
-                {
-                    if (systemInfoKey != null)
-                    {
-                        var dateTimeBebe = GetRandomDateTime();
-
-                        string logBefore = "BIOSReleaseDate - Before: " + systemInfoKey.GetValue("BIOSReleaseDate");
-                        systemInfoKey.SetValue("BIOSReleaseDate", dateTimeBebe.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture));
-                        string logAfter = "BIOSReleaseDate - After: " + systemInfoKey.GetValue("BIOSReleaseDate");
-                        SaveLogs("bios_release", logBefore, logAfter);
-                        ShowNotification("BiosRelease successfully updated.", NotificationType.Success);
-                    }
-                    else
-                    {
-                        ShowNotification("SystemInformation key not found.", NotificationType.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ShowNotification("An error occurred: " + ex.Message, NotificationType.Error);
-            }
-        }
-
-
         private void winid_Click(object sender, EventArgs e)
         {
             try
@@ -721,7 +480,7 @@ namespace SecHex_GUI
 
                         string newMachineGuid = RandomIdprid2(10);
                         machineGuidKey.SetValue("MachineGuid", newMachineGuid);
-
+                        globalMachineGuid = newMachineGuid;
                         string logBefore = $"Machine GUID - Before: {machineGuidBefore}";
                         string logAfter = $"Machine GUID - After: {newMachineGuid}";
                         SaveLogs("ChangeMachineGuid", logBefore, logAfter);
@@ -740,221 +499,28 @@ namespace SecHex_GUI
         }
 
 
-
-        private void pcname_Click(object sender, EventArgs e)
+        private void profile_Save(object sender, EventArgs e)
         {
             try
             {
-                string originalName;
-                string newName = "SecHex-" + RandomId(7);
-                using (RegistryKey computerNameKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\ComputerName\\ComputerName", true))
-                {
-                    if (computerNameKey != null)
-                    {
-                        originalName = computerNameKey.GetValue("ComputerName").ToString();
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
 
-                        computerNameKey.SetValue("ComputerName", newName);
-                        computerNameKey.SetValue("ActiveComputerName", newName);
-                        computerNameKey.SetValue("ComputerNamePhysicalDnsDomain", "");
-                    }
-                    else
-                    {
-                        ShowNotification("ComputerName key not found.", NotificationType.Error);
-                        return;
-                    }
-                }
-                using (RegistryKey activeComputerNameKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\ComputerName\\ActiveComputerName", true))
-                {
-                    if (activeComputerNameKey != null)
-                    {
-                        activeComputerNameKey.SetValue("ComputerName", newName);
-                        activeComputerNameKey.SetValue("ActiveComputerName", newName);
-                        activeComputerNameKey.SetValue("ComputerNamePhysicalDnsDomain", "");
-                    }
-                    else
-                    {
-                        ShowNotification("ActiveComputerName key not found.", NotificationType.Error);
-                        return;
-                    }
-                }
-                using (RegistryKey hostnameKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters", true))
-                {
-                    if (hostnameKey != null)
-                    {
-                        hostnameKey.SetValue("Hostname", newName);
-                        hostnameKey.SetValue("NV Hostname", newName);
-                    }
-                    else
-                    {
-                        ShowNotification("Hostname key not found.", NotificationType.Error);
-                        return;
-                    }
-                }
-                using (RegistryKey interfacesKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces", true))
-                {
-                    if (interfacesKey != null)
-                    {
-                        foreach (string interfaceName in interfacesKey.GetSubKeyNames())
-                        {
-                            using (RegistryKey interfaceKey = interfacesKey.OpenSubKey(interfaceName, true))
-                            {
-                                if (interfaceKey != null)
-                                {
-                                    interfaceKey.SetValue("Hostname", newName);
-                                    interfaceKey.SetValue("NV Hostname", newName);
-                                }
-                            }
-                        }
-                    }
-                }
 
-                string logBefore = "ComputerName - Before: " + originalName;
-                string logAfter = "ComputerName - After: " + newName;
-                SaveLogs("pcname", logBefore, logAfter);
-                ShowNotification("PC-Name successfully spoofed.", NotificationType.Success);
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
+
+                lines.Add($"{globalSerialNumber},{globalIdentifier},{globalSerialNumberKey},{globalGUID},{globalMachineGuid}");
+                File.WriteAllLines(filePath, lines);
 
             }
             catch (Exception ex)
             {
-                ShowNotification("An error occurred while spoofing the PC name: " + ex.Message, NotificationType.Error);
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-        private void display_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                RegistryKey displaySettings = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU", true);
-
-                if (displaySettings != null)
-                {
-                    string originalDisplayId = displaySettings.GetValue("MRU0")?.ToString();
-                    int displayId = RandomDisplayId();
-                    string spoofedDisplayId = $"SpoofedDisplay{displayId}";
-
-                    displaySettings.SetValue("MRU0", spoofedDisplayId);
-                    displaySettings.SetValue("MRU1", spoofedDisplayId);
-                    displaySettings.SetValue("MRU2", spoofedDisplayId);
-                    displaySettings.SetValue("MRU3", spoofedDisplayId);
-                    displaySettings.SetValue("MRU4", spoofedDisplayId);
-
-                    string logBefore = "Display ID - Before: " + originalDisplayId;
-                    string logAfter = "Display ID - After: " + displayId;
-                    SaveLogs("display", logBefore, logAfter);
-
-                    ShowNotification("Display successfully spoofed.", NotificationType.Success);
-                }
-                else
-                {
-                    ShowNotification("Display settings registry key not found.", NotificationType.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                ShowNotification("An error occurred while changing the display ID: " + ex.Message, NotificationType.Error);
-            }
-        }
-
-        private int RandomDisplayId()
-        {
-            Random rnd = new Random();
-            return rnd.Next(1, 9);
-        }
-
-
-        private void efi_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (RegistryKey efiVariables = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\Nsi\\{eb004a03-9b1a-11d4-9123-0050047759bc}\\26", true))
-                {
-                    if (efiVariables != null)
-                    {
-                        string efiVariableIdBefore = efiVariables.GetValue("VariableId")?.ToString();
-
-                        string newEfiVariableId = Guid.NewGuid().ToString();
-                        efiVariables.SetValue("VariableId", newEfiVariableId);
-                        string logBefore = "EFI Variable ID - Before: " + efiVariableIdBefore;
-                        string logAfter = "EFI Variable ID - After: " + newEfiVariableId;
-                        SaveLogs("efi", logBefore, logAfter);
-
-                        ShowNotification("EFI successfully spoofed.", NotificationType.Success);
-                    }
-                    else
-                    {
-                        ShowNotification("EFI variables registry key not found.", NotificationType.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ShowNotification("An error occurred while executing the EFI Function: " + ex.Message, NotificationType.Error);
-            }
-        }
-
-
-        private void siticoneButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (RegistryKey smbiosData = Registry.LocalMachine.OpenSubKey("HARDWARE\\DESCRIPTION\\System\\BIOS", true))
-                {
-                    if (smbiosData != null)
-                    {
-                        string serialNumberBefore = smbiosData.GetValue("SystemSerialNumber")?.ToString();
-
-                        string newSerialNumber = RandomId(10);
-                        smbiosData.SetValue("SystemSerialNumber", newSerialNumber);
-                        string logBefore = "SMBIOS SystemSerialNumber - Before: " + serialNumberBefore;
-                        string logAfter = "SMBIOS SystemSerialNumber - After: " + newSerialNumber;
-                        SaveLogs("smbios", logBefore, logAfter);
-
-                        ShowNotification("SMBIOS successfully spoofed.", NotificationType.Success);
-                    }
-                    else
-                    {
-                        ShowNotification("SMBIOS data registry key not found.", NotificationType.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ShowNotification("An error occurred while executing the SMBIOS Function: " + ex.Message, NotificationType.Error);
-            }
-        }
-
-        private void product_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (RegistryKey productKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", true))
-                {
-                    if (productKey != null)
-                    {
-                        string originalProductId = productKey.GetValue("ProductId")?.ToString();
-
-                        string newProductId = RandomIdprid(20);
-                        productKey.SetValue("ProductId", newProductId);
-
-                        string logBefore = "Product ID - Before: " + originalProductId;
-                        string logAfter = "Product ID - After: " + newProductId;
-                        SaveLogs("product", logBefore, logAfter);
-
-                        ShowNotification("Product ID successfully spoofed.", NotificationType.Success);
-                    }
-                    else
-                    {
-                        ShowNotification("Product registry key not found.", NotificationType.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ShowNotification("An error occurred while changing the Product ID: " + ex.Message, NotificationType.Error);
-            }
-        }
-
         private void backup_Click(object sender, EventArgs e)
         {
             try
@@ -1109,24 +675,6 @@ namespace SecHex_GUI
             Warning
         }
 
-        private void autostart_CheckedChanged(object sender, EventArgs e)
-        {
-            const string appName = "SecHex - Spoofy";
-            string runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
-            RegistryKey startupKey = Registry.CurrentUser.OpenSubKey(runKey, true);
-
-            if (autostart.Checked)
-            {
-                startupKey.SetValue(appName, Application.ExecutablePath);
-            }
-            else
-            {
-                startupKey.DeleteValue(appName, false);
-            }
-
-            startupKey.Close();
-        }
-
 
         private void systemcleaner_CheckedChanged(object sender, EventArgs e)
         {
@@ -1154,24 +702,133 @@ namespace SecHex_GUI
             }
         }
 
-        private void lgbt_CheckedChanged(object sender, EventArgs e)
-        {
-            MetroCheckBox checkBox = (MetroCheckBox)sender;
-
-            if (checkBox.Checked)
-            {
-                AnimateButtonsBorderColor(disk, winid, disk, efi, HwProfile, spoofall, mac, display, pcname, backup, product, req, sm, BIOSReleaseDate, MachineId);
-            }
-            else
-            {
-                StopButtonAnimation(disk, winid, disk, efi, HwProfile, spoofall, mac, display, pcname, backup, product, req, sm, BIOSReleaseDate, MachineId);
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void profile1_click(object sender, EventArgs e)
+        {
+            try
+            {
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
+
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
+                
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void disk_Save(string newSerial, string newIdentifier,string newSerialDisk)
+        {
+            try
+            {
+                using (RegistryKey ScsiPorts = Registry.LocalMachine.OpenSubKey("HARDWARE\\DEVICEMAP\\Scsi"))
+                {
+                    if (ScsiPorts != null)
+                    {
+                        foreach (string port in ScsiPorts.GetSubKeyNames())
+                        {
+                            using (RegistryKey ScsiBuses = Registry.LocalMachine.OpenSubKey($"HARDWARE\\DEVICEMAP\\Scsi\\{port}"))
+                            {
+                                if (ScsiBuses != null)
+                                {
+                                    foreach (string bus in ScsiBuses.GetSubKeyNames())
+                                    {
+                                        using (RegistryKey ScsuiBus = Registry.LocalMachine.OpenSubKey($"HARDWARE\\DEVICEMAP\\Scsi\\{port}\\{bus}\\Target Id 0\\Logical Unit Id 0", true))
+                                        {
+                                            if (ScsuiBus != null)
+                                            {
+                                                object deviceTypeValue = ScsuiBus.GetValue("DeviceType");
+                                                if (deviceTypeValue != null && deviceTypeValue.ToString() == "DiskPeripheral")
+                                                {
+                                                    string identifierBefore = ScsuiBus.GetValue("Identifier").ToString();
+                                                    string serialNumberBefore = ScsuiBus.GetValue("SerialNumber").ToString();
+
+                                                    string identifierAfter = newIdentifier;
+                                                    string serialNumberAfter = newSerial;
+                                                    string logBefore = $"DiskPeripheral {bus}\\Target Id 0\\Logical Unit Id 0 - Identifier: {identifierBefore}, SerialNumber: {serialNumberBefore}";
+                                                    string logAfter = $"DiskPeripheral {bus}\\Target Id 0\\Logical Unit Id 0 - Identifier: {identifierAfter}, SerialNumber: {serialNumberAfter}";
+                                                    SaveLogs("disk", logBefore, logAfter);
+                                                    ScsuiBus.SetValue("DeviceIdentifierPage", Encoding.UTF8.GetBytes(serialNumberAfter));
+                                                    ScsuiBus.SetValue("Identifier", identifierAfter);
+                                                    ScsuiBus.SetValue("InquiryData", Encoding.UTF8.GetBytes(identifierAfter));
+                                                    ScsuiBus.SetValue("SerialNumber", serialNumberAfter);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    ShowNotification("ScsiBuses key not found.", NotificationType.Error);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ShowNotification("ScsiPorts key not found.", NotificationType.Error);
+                        return;
+                    }
+                }
+
+                using (RegistryKey diskKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Enum\\IDE"))
+                {
+                    if (diskKey != null)
+                    {
+                        foreach (string controllerId in diskKey.GetSubKeyNames())
+                        {
+                            using (RegistryKey controller = diskKey.OpenSubKey(controllerId))
+                            {
+                                if (controller != null)
+                                {
+                                    foreach (string diskId in controller.GetSubKeyNames())
+                                    {
+                                        using (RegistryKey disk = controller.OpenSubKey(diskId, true))
+                                        {
+                                            if (disk != null)
+                                            {
+                                                string serialNumberBefore = disk.GetValue("SerialNumber")?.ToString();
+
+                                                string serialNumberAfter = newSerialDisk;
+                                                string logBefore = $"Hard Disk {diskId} - SerialNumber: {serialNumberBefore}";
+                                                string logAfter = $"Hard Disk {diskId} - SerialNumber: {serialNumberAfter}";
+                                                SaveLogs("disk", logBefore, logAfter);
+
+                                                disk.SetValue("SerialNumber", newSerialDisk);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ShowNotification("DISK successfully spoofed.", NotificationType.Success);
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while spoofing the DISK: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+
+
+
+
 
     }
 }

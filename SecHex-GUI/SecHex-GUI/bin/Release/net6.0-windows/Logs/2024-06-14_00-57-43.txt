@@ -1,0 +1,6 @@
+00:57:43: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: SanDisk Ultra 3D 2TB, SerialNumber: EAJUN41X2E9N4A
+00:57:43: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Crucial MX500 1TB, SerialNumber: 42GR025JO1ZWTG
+00:57:43: ID guid -  HwProfileGuid - Before: c4fe041f-ae82-4513-a2f0-306ceca87d68
+00:57:43: ID guid -  HwProfileGuid - After: e916282d-fc93-480a-a099-32efe8716616
+00:57:43: ID ChangeMachineGuid -  Machine GUID - Before: 8254u277-v173-e728-p338-x1202p17
+00:57:43: ID ChangeMachineGuid -  Machine GUID - After: 7685a849-h084-c453-n032-t7145z89

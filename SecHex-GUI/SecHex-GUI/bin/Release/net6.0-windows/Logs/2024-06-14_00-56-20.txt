@@ -1,0 +1,6 @@
+00:56:20: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Crucial MX500 1TB, SerialNumber: V4PDFUS218189Z
+00:56:20: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Seagate Barracuda 4TB, SerialNumber: JZMHLW536C0TBI
+00:56:20: ID guid -  HwProfileGuid - Before: a8a08969-e1af-47b2-9230-4d4f1e30cd9e
+00:56:20: ID guid -  HwProfileGuid - After: 9ee4a6eb-730f-4c05-9dac-bcb595bf96c6
+00:56:20: ID ChangeMachineGuid -  Machine GUID - Before: 3913c495-n720-o336-o414-l5021o38
+00:56:20: ID ChangeMachineGuid -  Machine GUID - After: 6474g183-i920-z668-q812-g2481i16

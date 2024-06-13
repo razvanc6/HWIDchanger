@@ -1,0 +1,6 @@
+00:29:04: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Samsung SSD 870 QVO 1TB, SerialNumber: KK48OW18NVHTJ1
+00:29:04: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Adata XPG SX8200 Pro 1TB, SerialNumber: LAR0BRPOOFFQFD
+00:29:04: ID guid -  HwProfileGuid - Before: b0f54a96-f88b-43dd-8946-895a8946e204
+00:29:04: ID guid -  HwProfileGuid - After: 3088eb7d-ad2f-41ee-a2c7-b146651ebf63
+00:29:04: ID ChangeMachineGuid -  Machine GUID - Before: 3661w624-o426-a844-x013-d8021w63
+00:29:04: ID ChangeMachineGuid -  Machine GUID - After: 3677m333-q607-r403-n938-w5349j12

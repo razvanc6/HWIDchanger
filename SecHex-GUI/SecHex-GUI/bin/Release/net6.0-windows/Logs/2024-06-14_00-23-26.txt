@@ -1,0 +1,6 @@
+00:23:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Intel 660p 1TB, SerialNumber: Q6WGWAQOLNFWE2
+00:23:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Kingston KC600 256GB, SerialNumber: KV2FH0GVDP7NVX
+00:23:26: ID guid -  HwProfileGuid - Before: fefcc51b-60eb-44be-8b8e-cc7f9134456a
+00:23:26: ID guid -  HwProfileGuid - After: d24a0379-7276-462a-b892-63a2c42c4464
+00:23:26: ID ChangeMachineGuid -  Machine GUID - Before: 0127o458-z377-y205-o731-b9674x50
+00:23:26: ID ChangeMachineGuid -  Machine GUID - After: 6640v393-f754-c647-f285-k8973z89

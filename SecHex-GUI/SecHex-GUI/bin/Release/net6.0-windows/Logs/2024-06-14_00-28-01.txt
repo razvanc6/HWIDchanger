@@ -1,0 +1,6 @@
+00:28:01: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Crucial P1 1TB, SerialNumber: M70XEHC8YZXN4D
+00:28:01: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Samsung SSD 870 QVO 1TB, SerialNumber: KEJFY1XWWSD4W7
+00:28:01: ID guid -  HwProfileGuid - Before: e901f029-39b0-4778-840e-6b36b24fb801
+00:28:01: ID guid -  HwProfileGuid - After: 9c415623-0c1b-4541-b96f-3199ce1ea6e4
+00:28:01: ID ChangeMachineGuid -  Machine GUID - Before: 3721e881-s957-u426-o785-g6912r52
+00:28:01: ID ChangeMachineGuid -  Machine GUID - After: 5148g858-o466-p506-k856-d8068e88

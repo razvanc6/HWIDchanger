@@ -1,0 +1,6 @@
+00:17:52: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Seagate FireCuda 2TB, SerialNumber: OPB0JUQ55U5KHI
+00:17:52: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Corsair MP600 2TB, SerialNumber: ZQPIBWC607WDRP
+00:17:52: ID guid -  HwProfileGuid - Before: bebbb21a-e22d-4aa5-a0b5-6faadf182f2a
+00:17:52: ID guid -  HwProfileGuid - After: cdef991c-b2ea-4d62-9d86-585be89fd0d3
+00:17:52: ID ChangeMachineGuid -  Machine GUID - Before: 1543k470-v706-z574-g707-y3009r10
+00:17:52: ID ChangeMachineGuid -  Machine GUID - After: 1727w460-c582-r260-r120-u2510l50

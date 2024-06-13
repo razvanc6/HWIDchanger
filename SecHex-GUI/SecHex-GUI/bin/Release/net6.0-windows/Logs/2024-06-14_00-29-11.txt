@@ -1,0 +1,6 @@
+00:29:11: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Adata XPG SX8200 Pro 1TB, SerialNumber: LAR0BRPOOFFQFD
+00:29:11: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Western Digital Black 6TB, SerialNumber: NU5ZYZ1SGMEZAN
+00:29:11: ID guid -  HwProfileGuid - Before: 3088eb7d-ad2f-41ee-a2c7-b146651ebf63
+00:29:11: ID guid -  HwProfileGuid - After: 182e7afe-c64e-42b6-81e0-d53d0174be45
+00:29:11: ID ChangeMachineGuid -  Machine GUID - Before: 3677m333-q607-r403-n938-w5349j12
+00:29:11: ID ChangeMachineGuid -  Machine GUID - After: 9781w171-v201-n627-d142-c7765m95

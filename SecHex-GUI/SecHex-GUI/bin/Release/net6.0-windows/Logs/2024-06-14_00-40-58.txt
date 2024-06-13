@@ -1,0 +1,6 @@
+00:40:58: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Western Digital Black 6TB, SerialNumber: NU5ZYZ1SGMEZAN
+00:40:58: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Intel 660p 1TB, SerialNumber: 3TNMT991BZN2VY
+00:40:58: ID guid -  HwProfileGuid - Before: 182e7afe-c64e-42b6-81e0-d53d0174be45
+00:40:58: ID guid -  HwProfileGuid - After: 66a07273-3c50-4edd-b52c-4ec608c8bb61
+00:40:58: ID ChangeMachineGuid -  Machine GUID - Before: 9781w171-v201-n627-d142-c7765m95
+00:40:58: ID ChangeMachineGuid -  Machine GUID - After: 2134p865-z610-j943-b452-q0367c22

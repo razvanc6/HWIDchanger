@@ -1,0 +1,12 @@
+00:56:53: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Crucial MX500 1TB, SerialNumber: LDFD6RF5A4V8OE
+00:56:53: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Intel 660p 1TB, SerialNumber: OU9CMDLMMN5MYC
+00:56:53: ID guid -  HwProfileGuid - Before: 3727aaea-c3d2-4076-9235-48c7caabe8d2
+00:56:53: ID guid -  HwProfileGuid - After: 7138d4ab-e10f-408c-876a-3b17e401fe71
+00:56:53: ID ChangeMachineGuid -  Machine GUID - Before: 7891h830-r102-c970-t331-e8391a65
+00:56:53: ID ChangeMachineGuid -  Machine GUID - After: 0646j664-w952-h724-a537-j4240i02
+00:56:53: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Intel 660p 1TB, SerialNumber: OU9CMDLMMN5MYC
+00:56:53: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: HP EX920 512GB, SerialNumber: QBYKQBFLR4T62K
+00:56:53: ID guid -  HwProfileGuid - Before: 7138d4ab-e10f-408c-876a-3b17e401fe71
+00:56:53: ID guid -  HwProfileGuid - After: 99fd08f5-85b5-4958-a639-e0243715dc4c
+00:56:53: ID ChangeMachineGuid -  Machine GUID - Before: 0646j664-w952-h724-a537-j4240i02
+00:56:53: ID ChangeMachineGuid -  Machine GUID - After: 3133g855-l358-z406-g887-c5541x08

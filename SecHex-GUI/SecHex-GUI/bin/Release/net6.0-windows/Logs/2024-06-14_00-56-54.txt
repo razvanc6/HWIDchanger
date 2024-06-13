@@ -1,0 +1,6 @@
+00:56:54: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: HP EX920 512GB, SerialNumber: QBYKQBFLR4T62K
+00:56:54: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: SanDisk Ultra 3D 2TB, SerialNumber: EAJUN41X2E9N4A
+00:56:54: ID guid -  HwProfileGuid - Before: 99fd08f5-85b5-4958-a639-e0243715dc4c
+00:56:54: ID guid -  HwProfileGuid - After: c4fe041f-ae82-4513-a2f0-306ceca87d68
+00:56:54: ID ChangeMachineGuid -  Machine GUID - Before: 3133g855-l358-z406-g887-c5541x08
+00:56:54: ID ChangeMachineGuid -  Machine GUID - After: 8254u277-v173-e728-p338-x1202p17

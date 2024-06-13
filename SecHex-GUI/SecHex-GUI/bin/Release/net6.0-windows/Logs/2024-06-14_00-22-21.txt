@@ -1,0 +1,6 @@
+00:22:21: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Corsair MP600 2TB, SerialNumber: XO5AQN1ZIEJUPV
+00:22:21: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Intel 660p 1TB, SerialNumber: Q6WGWAQOLNFWE2
+00:22:21: ID guid -  HwProfileGuid - Before: 6eaee080-073c-4106-921d-01e417b18b94
+00:22:21: ID guid -  HwProfileGuid - After: fefcc51b-60eb-44be-8b8e-cc7f9134456a
+00:22:21: ID ChangeMachineGuid -  Machine GUID - Before: 3371j590-z997-x521-c412-m7754r77
+00:22:21: ID ChangeMachineGuid -  Machine GUID - After: 0127o458-z377-y205-o731-b9674x50

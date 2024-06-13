@@ -1,0 +1,6 @@
+00:41:59: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Intel 660p 1TB, SerialNumber: 3TNMT991BZN2VY
+00:41:59: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Seagate FireCuda 2TB, SerialNumber: 3JKNVU3EY5L3ZM
+00:41:59: ID guid -  HwProfileGuid - Before: 66a07273-3c50-4edd-b52c-4ec608c8bb61
+00:41:59: ID guid -  HwProfileGuid - After: b9954c34-7e66-42c4-af04-1ef790686093
+00:41:59: ID ChangeMachineGuid -  Machine GUID - Before: 2134p865-z610-j943-b452-q0367c22
+00:41:59: ID ChangeMachineGuid -  Machine GUID - After: 4111e222-h234-e072-x942-b8832d79

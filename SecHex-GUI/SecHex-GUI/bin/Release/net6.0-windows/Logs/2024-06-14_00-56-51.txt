@@ -1,0 +1,6 @@
+00:56:51: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Toshiba X300 6TB, SerialNumber: VU9FPVX4Y4S96Q
+00:56:51: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Toshiba X300 6TB, SerialNumber: LDW86YOSZGQQ4P
+00:56:51: ID guid -  HwProfileGuid - Before: c2386d74-c5a5-4512-abe4-e1fa0b72a21e
+00:56:51: ID guid -  HwProfileGuid - After: 1ae7cf89-5db7-4433-bae1-493f30b0bfbd
+00:56:51: ID ChangeMachineGuid -  Machine GUID - Before: 6034z336-y287-d565-r081-m8394x35
+00:56:51: ID ChangeMachineGuid -  Machine GUID - After: 3297a047-q841-k215-x382-a5184p14

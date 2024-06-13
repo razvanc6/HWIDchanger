@@ -1,0 +1,6 @@
+00:23:55: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Kingston KC600 256GB, SerialNumber: KV2FH0GVDP7NVX
+00:23:55: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Crucial P1 1TB, SerialNumber: M70XEHC8YZXN4D
+00:23:55: ID guid -  HwProfileGuid - Before: d24a0379-7276-462a-b892-63a2c42c4464
+00:23:55: ID guid -  HwProfileGuid - After: e901f029-39b0-4778-840e-6b36b24fb801
+00:23:55: ID ChangeMachineGuid -  Machine GUID - Before: 6640v393-f754-c647-f285-k8973z89
+00:23:55: ID ChangeMachineGuid -  Machine GUID - After: 3721e881-s957-u426-o785-g6912r52

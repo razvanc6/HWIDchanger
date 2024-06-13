@@ -1,0 +1,6 @@
+00:21:55: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Corsair MP600 2TB, SerialNumber: ZQPIBWC607WDRP
+00:21:55: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Seagate Barracuda 4TB, SerialNumber: POE4KDPRZ4AMB7
+00:21:55: ID guid -  HwProfileGuid - Before: cdef991c-b2ea-4d62-9d86-585be89fd0d3
+00:21:55: ID guid -  HwProfileGuid - After: 06499750-47c3-42ff-bacb-f6704052703d
+00:21:55: ID ChangeMachineGuid -  Machine GUID - Before: 1727w460-c582-r260-r120-u2510l50
+00:21:55: ID ChangeMachineGuid -  Machine GUID - After: 7004n608-e207-z050-r075-s4086w88

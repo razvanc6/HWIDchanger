@@ -1,0 +1,6 @@
+00:56:33: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Seagate Barracuda 4TB, SerialNumber: JZMHLW536C0TBI
+00:56:33: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Toshiba X300 6TB, SerialNumber: VU9FPVX4Y4S96Q
+00:56:33: ID guid -  HwProfileGuid - Before: 9ee4a6eb-730f-4c05-9dac-bcb595bf96c6
+00:56:33: ID guid -  HwProfileGuid - After: c2386d74-c5a5-4512-abe4-e1fa0b72a21e
+00:56:33: ID ChangeMachineGuid -  Machine GUID - Before: 6474g183-i920-z668-q812-g2481i16
+00:56:33: ID ChangeMachineGuid -  Machine GUID - After: 6034z336-y287-d565-r081-m8394x35

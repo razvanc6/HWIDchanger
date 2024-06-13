@@ -1,0 +1,2 @@
+23:24:47: ID pcname -  ComputerName - Before: SecHex-IJU5L7H
+23:24:47: ID pcname -  ComputerName - After: SecHex-X0L958G

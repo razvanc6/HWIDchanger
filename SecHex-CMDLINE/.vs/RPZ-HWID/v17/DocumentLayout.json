@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-CMDLINE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C5BEBD8-2D2D-435C-B9D2-C6BD86D9E96A}|RPZ-HWID\\RPZ-HWID.csproj|c:\\users\\razvan\\source\\repos\\sechex-spoofy\\sechex-cmdline\\rpz-hwid\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C5BEBD8-2D2D-435C-B9D2-C6BD86D9E96A}|RPZ-HWID\\RPZ-HWID.csproj|solutionrelative:rpz-hwid\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-CMDLINE\\RPZ-HWID\\Program.cs",
+              "RelativeDocumentMoniker": "RPZ-HWID\\Program.cs",
+              "ToolTip": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-CMDLINE\\RPZ-HWID\\Program.cs",
+              "RelativeToolTip": "RPZ-HWID\\Program.cs",
+              "ViewState": "AQIAAMMBAAAAAAAAAAAAAHkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T20:22:35.816Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

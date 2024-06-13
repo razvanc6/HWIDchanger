@@ -1,0 +1,6 @@
+00:28:30: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Samsung SSD 870 QVO 1TB, SerialNumber: KEJFY1XWWSD4W7
+00:28:30: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Samsung SSD 870 QVO 1TB, SerialNumber: KK48OW18NVHTJ1
+00:28:30: ID guid -  HwProfileGuid - Before: 9c415623-0c1b-4541-b96f-3199ce1ea6e4
+00:28:30: ID guid -  HwProfileGuid - After: b0f54a96-f88b-43dd-8946-895a8946e204
+00:28:30: ID ChangeMachineGuid -  Machine GUID - Before: 5148g858-o466-p506-k856-d8068e88
+00:28:30: ID ChangeMachineGuid -  Machine GUID - After: 3661w624-o426-a844-x013-d8021w63

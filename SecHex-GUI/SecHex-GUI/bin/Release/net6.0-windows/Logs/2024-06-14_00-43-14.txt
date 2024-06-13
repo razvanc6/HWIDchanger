@@ -1,0 +1,6 @@
+00:43:14: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Red Pro 10TB, SerialNumber: SBCVZQCT9MB3AG
+00:43:14: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: ADATA Swordfish 500GB, SerialNumber: S0T92WC24JQB9L
+00:43:14: ID guid -  HwProfileGuid - Before: bc6f14c2-cec1-4d5d-a720-2f13bbedd1ce
+00:43:14: ID guid -  HwProfileGuid - After: 7778cb62-6d26-4f9b-abb3-2d10228722bb
+00:43:14: ID ChangeMachineGuid -  Machine GUID - Before: 3659f300-m241-v424-d547-b2121b79
+00:43:14: ID ChangeMachineGuid -  Machine GUID - After: 4714n998-x758-w806-r059-o3415n32

@@ -343,7 +343,7 @@
             Resizable = false;
             ShadowType = MetroFormShadowType.DropShadow;
             Style = MetroFramework.MetroColorStyle.Magenta;
-            Text = "SecHex - Cleaner";
+            Text = "Design - Cleaner";
             Theme = MetroFramework.MetroThemeStyle.Dark;
             Load += south_africa_Load;
             ResumeLayout(false);

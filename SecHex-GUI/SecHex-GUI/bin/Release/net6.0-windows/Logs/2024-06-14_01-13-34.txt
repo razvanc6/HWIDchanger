@@ -1,0 +1,6 @@
+01:13:34: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Crucial MX500 1TB, SerialNumber: V4PDFUS218189Z
+01:13:34: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Crucial MX500 1TB, SerialNumber: V4PDFUS218189Z
+01:13:34: ID guid -  HwProfileGuid - Before: a8a08969-e1af-47b2-9230-4d4f1e30cd9e
+01:13:34: ID guid -  HwProfileGuid - After: a8a08969-e1af-47b2-9230-4d4f1e30cd9e
+01:13:34: ID ChangeMachineGuid -  Machine GUID - Before: 3913c495-n720-o336-o414-l5021o38
+01:13:34: ID ChangeMachineGuid -  Machine GUID - After: 3913c495-n720-o336-o414-l5021o38

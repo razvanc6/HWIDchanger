@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {}
+    "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {
+    "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
+        "projectUniqueName": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
         "projectName": "SecHex-GUI",
-        "projectPath": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
+        "projectPath": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
         "packagesPath": "C:\\Users\\Razvan\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\obj\\",
         "projectStyle": "PackageReference",

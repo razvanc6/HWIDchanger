@@ -707,29 +707,8 @@ namespace SecHex_GUI
 
         }
 
-        private void profile1_click(object sender, EventArgs e)
-        {
-            try
-            {
-                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string profilesFolder = Path.Combine(programDirectory, "Profiles");
-                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
 
-                string filePath = profilesPath;
-                List<string> lines = new List<string>();
-                lines = File.ReadAllLines(filePath).ToList();
-                
-
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private async void disk_Save(string newSerial, string newIdentifier,string newSerialDisk)
+        private async void disk_Save(string newSerial, string newIdentifier, string newSerialDisk)
         {
             try
             {
@@ -825,10 +804,210 @@ namespace SecHex_GUI
             }
         }
 
+        private void GUID_Save(string newGUIDSAVED)
+        {
+            try
+            {
+                using (RegistryKey HardwareGUID = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\IDConfigDB\\Hardware Profiles\\0001", true))
+                {
+                    if (HardwareGUID != null)
+                    {
+                        string logBefore = "HwProfileGuid - Before: " + HardwareGUID.GetValue("HwProfileGuid");
+                        HardwareGUID.DeleteValue("HwProfileGuid");
+                        string newguid = newGUIDSAVED;
+                        HardwareGUID.SetValue("HwProfileGuid", newguid);
+                        string logAfter = "HwProfileGuid - After: " + HardwareGUID.GetValue("HwProfileGuid");
+                        SaveLogs("guid", logBefore, logAfter);
+                    }
+                    else
+                    {
+                        ShowNotification("HardwareGUID key not found.", NotificationType.Error);
+                        return;
+                    }
+                }
 
+                ShowNotification("HwProfile successfully spoofed.", NotificationType.Success);
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred: " + ex.Message, NotificationType.Error);
+            }
+        }
 
+        private void winid_Save(string newWinID)
+        {
+            try
+            {
+                using (RegistryKey machineGuidKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Cryptography", true))
+                {
+                    if (machineGuidKey != null)
+                    {
+                        string machineGuidBefore = machineGuidKey.GetValue("MachineGuid")?.ToString();
 
+                        string newMachineGuid = newWinID;
+                        machineGuidKey.SetValue("MachineGuid", newMachineGuid);
+                        string logBefore = $"Machine GUID - Before: {machineGuidBefore}";
+                        string logAfter = $"Machine GUID - After: {newMachineGuid}";
+                        SaveLogs("ChangeMachineGuid", logBefore, logAfter);
+                        ShowNotification("Machine GUID successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("Machine GUID registry key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while changing the machine GUID: " + ex.Message, NotificationType.Error);
+            }
+        }
+        private void profile1_click(object sender, EventArgs e)
+        {
+            try
+            {
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
 
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
 
+                string input = lines[0];
+                string[] words = input.Split(',');
+                disk_Save(words[0], words[1], words[2]);
+                GUID_Save(words[3]);
+                winid_Save(words[4]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void profile2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
+
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
+
+                string input = lines[1];
+                string[] words = input.Split(',');
+                disk_Save(words[0], words[1], words[2]);
+                GUID_Save(words[3]);
+                winid_Save(words[4]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void profile3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
+
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
+
+                string input = lines[2];
+                string[] words = input.Split(',');
+                disk_Save(words[0], words[1], words[2]);
+                GUID_Save(words[3]);
+                winid_Save(words[4]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void profile4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
+
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
+
+                string input = lines[3];
+                string[] words = input.Split(',');
+                disk_Save(words[0], words[1], words[2]);
+                GUID_Save(words[3]);
+                winid_Save(words[4]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void profile5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
+
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
+
+                string input = lines[4];
+                string[] words = input.Split(',');
+                disk_Save(words[0], words[1], words[2]);
+                GUID_Save(words[3]);
+                winid_Save(words[4]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void profile6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string profilesFolder = Path.Combine(programDirectory, "Profiles");
+                string profilesPath = Path.Combine(profilesFolder, "profiles.txt");
+
+                string filePath = profilesPath;
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
+
+                string input = lines[5];
+                string[] words = input.Split(',');
+                disk_Save(words[0], words[1], words[2]);
+                GUID_Save(words[3]);
+                winid_Save(words[4]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+
+
+
+
 }

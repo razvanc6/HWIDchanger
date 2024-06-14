@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lgp9YNuQCLTeizcNO29jQ4GWN3BotUoJ7nPczvOv1suENaEPxKIMQIRlhgGZcIQLs0v7ORIdw5lIsKPg9ds4hw==",
+  "dgSpecHash": "eTDXFef/1+qzbnbkgJPOpvxrDu0ULVwDjN4BYU/JHclDeaDUfGApaI5upahwtwenjdmdq/sTOoGWE5zbkybi7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
+  "projectFilePath": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Razvan\\.nuget\\packages\\costura.fody\\5.7.0\\costura.fody.5.7.0.nupkg.sha512",
     "C:\\Users\\Razvan\\.nuget\\packages\\fody\\6.8.0\\fody.6.8.0.nupkg.sha512",

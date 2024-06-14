@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spoofy));
             disk = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             mac = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            pcname = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            profile2 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             winid = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             HwProfile = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            display = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            sm = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            profile3 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            profile4 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             req = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             spoofall = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             profile1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             backup = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             systemcleaner = new MetroFramework.Controls.MetroCheckBox();
             logwind = new MetroFramework.Controls.MetroCheckBox();
-            BIOSReleaseDate = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            MachineId = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            profile6 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            profile5 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             label1 = new Label();
             SuspendLayout();
             // 
@@ -96,28 +96,29 @@
             mac.Text = "MAC";
             mac.Click += mac_Click;
             // 
-            // pcname
+            // profile2
             // 
-            pcname.Animated = true;
-            pcname.AutoRoundedCorners = true;
-            pcname.BackColor = Color.Transparent;
-            pcname.BorderColor = Color.White;
-            pcname.BorderRadius = 15;
-            pcname.BorderThickness = 1;
-            pcname.CustomBorderColor = Color.Transparent;
-            pcname.DisabledState.BorderColor = Color.DarkGray;
-            pcname.DisabledState.CustomBorderColor = Color.DarkGray;
-            pcname.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            pcname.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            pcname.FillColor = Color.Transparent;
-            pcname.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            pcname.ForeColor = Color.White;
-            pcname.Location = new Point(175, 211);
-            pcname.Name = "pcname";
-            pcname.PressedDepth = 60;
-            pcname.Size = new Size(157, 33);
-            pcname.TabIndex = 5;
-            pcname.Text = "scos";
+            profile2.Animated = true;
+            profile2.AutoRoundedCorners = true;
+            profile2.BackColor = Color.Transparent;
+            profile2.BorderColor = Color.White;
+            profile2.BorderRadius = 15;
+            profile2.BorderThickness = 1;
+            profile2.CustomBorderColor = Color.Transparent;
+            profile2.DisabledState.BorderColor = Color.DarkGray;
+            profile2.DisabledState.CustomBorderColor = Color.DarkGray;
+            profile2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            profile2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            profile2.FillColor = Color.Transparent;
+            profile2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            profile2.ForeColor = Color.White;
+            profile2.Location = new Point(175, 211);
+            profile2.Name = "profile2";
+            profile2.PressedDepth = 60;
+            profile2.Size = new Size(157, 33);
+            profile2.TabIndex = 5;
+            profile2.Text = "Profil 2";
+            profile2.Click += profile2_Click;
             // 
             // winid
             // 
@@ -167,51 +168,53 @@
             HwProfile.Text = "HwProfile GUID";
             HwProfile.Click += GUID_Click;
             // 
-            // display
+            // profile3
             // 
-            display.Animated = true;
-            display.AutoRoundedCorners = true;
-            display.BackColor = Color.Transparent;
-            display.BorderColor = Color.White;
-            display.BorderRadius = 15;
-            display.BorderThickness = 1;
-            display.CustomBorderColor = Color.Transparent;
-            display.DisabledState.BorderColor = Color.DarkGray;
-            display.DisabledState.CustomBorderColor = Color.DarkGray;
-            display.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            display.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            display.FillColor = Color.Transparent;
-            display.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            display.ForeColor = Color.White;
-            display.Location = new Point(338, 212);
-            display.Name = "display";
-            display.PressedDepth = 60;
-            display.Size = new Size(157, 32);
-            display.TabIndex = 8;
-            display.Text = "scos";
+            profile3.Animated = true;
+            profile3.AutoRoundedCorners = true;
+            profile3.BackColor = Color.Transparent;
+            profile3.BorderColor = Color.White;
+            profile3.BorderRadius = 15;
+            profile3.BorderThickness = 1;
+            profile3.CustomBorderColor = Color.Transparent;
+            profile3.DisabledState.BorderColor = Color.DarkGray;
+            profile3.DisabledState.CustomBorderColor = Color.DarkGray;
+            profile3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            profile3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            profile3.FillColor = Color.Transparent;
+            profile3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            profile3.ForeColor = Color.White;
+            profile3.Location = new Point(338, 212);
+            profile3.Name = "profile3";
+            profile3.PressedDepth = 60;
+            profile3.Size = new Size(157, 32);
+            profile3.TabIndex = 8;
+            profile3.Text = "Profil 3";
+            profile3.Click += profile3_Click;
             // 
-            // sm
+            // profile4
             // 
-            sm.Animated = true;
-            sm.AutoRoundedCorners = true;
-            sm.BackColor = Color.Transparent;
-            sm.BorderColor = Color.White;
-            sm.BorderRadius = 15;
-            sm.BorderThickness = 1;
-            sm.CustomBorderColor = Color.Transparent;
-            sm.DisabledState.BorderColor = Color.DarkGray;
-            sm.DisabledState.CustomBorderColor = Color.DarkGray;
-            sm.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            sm.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            sm.FillColor = Color.Transparent;
-            sm.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sm.ForeColor = Color.White;
-            sm.Location = new Point(12, 249);
-            sm.Name = "sm";
-            sm.PressedDepth = 60;
-            sm.Size = new Size(157, 32);
-            sm.TabIndex = 10;
-            sm.Text = "scos";
+            profile4.Animated = true;
+            profile4.AutoRoundedCorners = true;
+            profile4.BackColor = Color.Transparent;
+            profile4.BorderColor = Color.White;
+            profile4.BorderRadius = 15;
+            profile4.BorderThickness = 1;
+            profile4.CustomBorderColor = Color.Transparent;
+            profile4.DisabledState.BorderColor = Color.DarkGray;
+            profile4.DisabledState.CustomBorderColor = Color.DarkGray;
+            profile4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            profile4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            profile4.FillColor = Color.Transparent;
+            profile4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            profile4.ForeColor = Color.White;
+            profile4.Location = new Point(12, 249);
+            profile4.Name = "profile4";
+            profile4.PressedDepth = 60;
+            profile4.Size = new Size(157, 32);
+            profile4.TabIndex = 10;
+            profile4.Text = "Profil 4";
+            profile4.Click += profile4_Click;
             // 
             // req
             // 
@@ -282,7 +285,7 @@
             profile1.PressedDepth = 60;
             profile1.Size = new Size(157, 32);
             profile1.TabIndex = 18;
-            profile1.Text = "scos";
+            profile1.Text = "Profil 1";
             profile1.Click += profile1_click;
             // 
             // backup
@@ -335,51 +338,53 @@
             logwind.UseVisualStyleBackColor = true;
             logwind.CheckedChanged += logwind_CheckedChanged;
             // 
-            // BIOSReleaseDate
+            // profile6
             // 
-            BIOSReleaseDate.Animated = true;
-            BIOSReleaseDate.AutoRoundedCorners = true;
-            BIOSReleaseDate.BackColor = Color.Transparent;
-            BIOSReleaseDate.BorderColor = Color.White;
-            BIOSReleaseDate.BorderRadius = 15;
-            BIOSReleaseDate.BorderThickness = 1;
-            BIOSReleaseDate.CustomBorderColor = Color.Transparent;
-            BIOSReleaseDate.DisabledState.BorderColor = Color.DarkGray;
-            BIOSReleaseDate.DisabledState.CustomBorderColor = Color.DarkGray;
-            BIOSReleaseDate.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            BIOSReleaseDate.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            BIOSReleaseDate.FillColor = Color.Transparent;
-            BIOSReleaseDate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BIOSReleaseDate.ForeColor = Color.White;
-            BIOSReleaseDate.Location = new Point(338, 249);
-            BIOSReleaseDate.Name = "BIOSReleaseDate";
-            BIOSReleaseDate.PressedDepth = 60;
-            BIOSReleaseDate.Size = new Size(157, 32);
-            BIOSReleaseDate.TabIndex = 36;
-            BIOSReleaseDate.Text = "scos";
+            profile6.Animated = true;
+            profile6.AutoRoundedCorners = true;
+            profile6.BackColor = Color.Transparent;
+            profile6.BorderColor = Color.White;
+            profile6.BorderRadius = 15;
+            profile6.BorderThickness = 1;
+            profile6.CustomBorderColor = Color.Transparent;
+            profile6.DisabledState.BorderColor = Color.DarkGray;
+            profile6.DisabledState.CustomBorderColor = Color.DarkGray;
+            profile6.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            profile6.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            profile6.FillColor = Color.Transparent;
+            profile6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            profile6.ForeColor = Color.White;
+            profile6.Location = new Point(338, 249);
+            profile6.Name = "profile6";
+            profile6.PressedDepth = 60;
+            profile6.Size = new Size(157, 32);
+            profile6.TabIndex = 36;
+            profile6.Text = "Profil 6";
+            profile6.Click += profile6_Click;
             // 
-            // MachineId
+            // profile5
             // 
-            MachineId.Animated = true;
-            MachineId.AutoRoundedCorners = true;
-            MachineId.BackColor = Color.Transparent;
-            MachineId.BorderColor = Color.White;
-            MachineId.BorderRadius = 15;
-            MachineId.BorderThickness = 1;
-            MachineId.CustomBorderColor = Color.Transparent;
-            MachineId.DisabledState.BorderColor = Color.DarkGray;
-            MachineId.DisabledState.CustomBorderColor = Color.DarkGray;
-            MachineId.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            MachineId.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            MachineId.FillColor = Color.Transparent;
-            MachineId.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MachineId.ForeColor = Color.White;
-            MachineId.Location = new Point(175, 249);
-            MachineId.Name = "MachineId";
-            MachineId.PressedDepth = 60;
-            MachineId.Size = new Size(157, 32);
-            MachineId.TabIndex = 37;
-            MachineId.Text = "scos";
+            profile5.Animated = true;
+            profile5.AutoRoundedCorners = true;
+            profile5.BackColor = Color.Transparent;
+            profile5.BorderColor = Color.White;
+            profile5.BorderRadius = 15;
+            profile5.BorderThickness = 1;
+            profile5.CustomBorderColor = Color.Transparent;
+            profile5.DisabledState.BorderColor = Color.DarkGray;
+            profile5.DisabledState.CustomBorderColor = Color.DarkGray;
+            profile5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            profile5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            profile5.FillColor = Color.Transparent;
+            profile5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            profile5.ForeColor = Color.White;
+            profile5.Location = new Point(175, 249);
+            profile5.Name = "profile5";
+            profile5.PressedDepth = 60;
+            profile5.Size = new Size(157, 32);
+            profile5.TabIndex = 37;
+            profile5.Text = "Profil 5";
+            profile5.Click += profile5_Click;
             // 
             // label1
             // 
@@ -397,19 +402,19 @@
             BackColor = Color.FromArgb(17, 17, 17);
             ClientSize = new Size(634, 423);
             Controls.Add(label1);
-            Controls.Add(MachineId);
-            Controls.Add(BIOSReleaseDate);
+            Controls.Add(profile5);
+            Controls.Add(profile6);
             Controls.Add(logwind);
             Controls.Add(systemcleaner);
             Controls.Add(backup);
             Controls.Add(profile1);
             Controls.Add(spoofall);
             Controls.Add(req);
-            Controls.Add(sm);
-            Controls.Add(display);
+            Controls.Add(profile4);
+            Controls.Add(profile3);
             Controls.Add(HwProfile);
             Controls.Add(winid);
-            Controls.Add(pcname);
+            Controls.Add(profile2);
             Controls.Add(mac);
             Controls.Add(disk);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -417,7 +422,7 @@
             Resizable = false;
             ShadowType = MetroFormShadowType.DropShadow;
             Style = MetroFramework.MetroColorStyle.Magenta;
-            Text = "SecHex - Spoofy V1.5.8";
+            Text = "HWID Spoofer - Design";
             Theme = MetroFramework.MetroThemeStyle.Dark;
             Load += Form1_Load;
             ResumeLayout(false);
@@ -427,19 +432,19 @@
         #endregion
         private Siticone.Desktop.UI.WinForms.SiticoneButton disk;
         private Siticone.Desktop.UI.WinForms.SiticoneButton mac;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton pcname;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton profile2;
         private Siticone.Desktop.UI.WinForms.SiticoneButton winid;
         private Siticone.Desktop.UI.WinForms.SiticoneButton HwProfile;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton display;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton sm;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton profile3;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton profile4;
         private Siticone.Desktop.UI.WinForms.SiticoneButton req;
         private Siticone.Desktop.UI.WinForms.SiticoneButton spoofall;
         private Siticone.Desktop.UI.WinForms.SiticoneButton profile1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton backup;
         private MetroFramework.Controls.MetroCheckBox systemcleaner;
         private MetroFramework.Controls.MetroCheckBox logwind;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton BIOSReleaseDate;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton MachineId;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton profile6;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton profile5;
         private Label label1;
     }
 }

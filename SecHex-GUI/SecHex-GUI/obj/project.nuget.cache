@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eTDXFef/1+qzbnbkgJPOpvxrDu0ULVwDjN4BYU/JHclDeaDUfGApaI5upahwtwenjdmdq/sTOoGWE5zbkybi7g==",
+  "dgSpecHash": "guWgm7zMt8k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
+  "projectFilePath": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Razvan\\.nuget\\packages\\costura.fody\\5.7.0\\costura.fody.5.7.0.nupkg.sha512",
     "C:\\Users\\Razvan\\.nuget\\packages\\fody\\6.8.0\\fody.6.8.0.nupkg.sha512",
@@ -89,11 +89,7 @@
     "C:\\Users\\Razvan\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Razvan\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\Razvan\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\Razvan\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Razvan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\Razvan\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\Razvan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\Razvan\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+    "C:\\Users\\Razvan\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
     {

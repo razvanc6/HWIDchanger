@@ -1,0 +1,22 @@
+15:16:10: ID ChangeMachineGuid -  Machine GUID - Before: 1062q488-p484-s966-e714-r6855i05
+15:16:10: ID ChangeMachineGuid -  Machine GUID - After: 1057m193-u703-t069-s790-r4239p04
+15:16:10: ID mac -  MAC Address {DBCEACEE-686C-4BB1-97F5-7C2F3965CD06} - Before: 
+15:16:10: ID mac -  MAC Address {DBCEACEE-686C-4BB1-97F5-7C2F3965CD06} - After: DA-8C-6D-5B-C6-E9
+15:16:10: ID mac -  MAC Address: Restarting NetAdapter...
+15:16:10: ID mac -  MAC Address: NetAdapter restartet.
+15:16:10: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: 16-D6-EE-72-00-A7
+15:16:10: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: 6E-FD-6C-8E-50-E7
+15:16:10: ID mac -  MAC Address: Restarting NetAdapter...
+15:16:10: ID mac -  MAC Address: NetAdapter restartet.
+15:16:10: ID display -  Display ID - Before: Display6
+15:16:10: ID display -  Display ID - After: 5
+15:16:10: ID efi -  EFI Variable ID - Before: 15a9baf7-068d-47ff-ac54-8760cbc97445
+15:16:10: ID efi -  EFI Variable ID - After: 91648ed5-5bc7-40de-ac41-0fc763a04600
+15:16:10: ID smbios -  SMBIOS SystemSerialNumber - Before: 
+15:16:10: ID smbios -  SMBIOS SystemSerialNumber - After: LY14XKYTUT
+15:16:10: ID product -  Product ID - Before: 01855-38001-76697-G4
+15:16:10: ID product -  Product ID - After: 41037-04571-75312-L6
+15:16:10: ID bios_release -  BIOSReleaseDate - Before: 08/01/2023
+15:16:10: ID bios_release -  BIOSReleaseDate - After: 26/02/2023
+15:16:10: ID guid -  MachineId - Before: 6a9ea215-b593-4f96-9953-e5710ae289dd
+15:16:10: ID guid -  MachineId - After: be0f2012-981c-4ad9-9ae7-d7e130414651

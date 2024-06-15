@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SecHex_GUI
-build_property.ProjectDir = C:\Users\Razvan\Source\Repos\SecHex-Spoofy\SecHex-GUI\SecHex-GUI\
+build_property.ProjectDir = C:\Users\Razvan\source\repos\SecHex-Spoofy\SecHex-GUI\SecHex-GUI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,0 +1,26 @@
+23:38:07: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Red Pro 10TB, SerialNumber: P0U9RSKIVT2JIL
+23:38:07: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+23:38:07: ID guid -  HwProfileGuid - Before: a06cb444-608c-4ea0-915d-e6cc5cb96685
+23:38:07: ID guid -  HwProfileGuid - After: 2a8c1613-151e-49db-88d7-ae3945da90bc
+23:38:07: ID ChangeMachineGuid -  Machine GUID - Before: 1566f563-c296-u726-e355-u6651y11
+23:38:07: ID ChangeMachineGuid -  Machine GUID - After: 3644z035-o730-w350-k112-w6081s14
+23:38:07: ID mac -  MAC Address {3EA554F0-5F6C-4629-BBCF-73997E7D1DEE} - Before: A2-3E-C3-04-9A-62
+23:38:07: ID mac -  MAC Address {3EA554F0-5F6C-4629-BBCF-73997E7D1DEE} - After: 36-55-7C-F0-DA-6B
+23:38:07: ID mac -  MAC Address: Restarting NetAdapter...
+23:38:07: ID mac -  MAC Address: NetAdapter restartet.
+23:38:07: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: DE-46-19-11-AF-DC
+23:38:07: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+23:38:07: ID mac -  MAC Address: Restarting NetAdapter...
+23:38:07: ID mac -  MAC Address: NetAdapter restartet.
+23:38:07: ID display -  Display ID - Before: SpoofedDisplay1
+23:38:07: ID display -  Display ID - After: 4
+23:38:07: ID efi -  EFI Variable ID - Before: 74dc0d69-8277-454e-919f-7641b4d6a881
+23:38:07: ID efi -  EFI Variable ID - After: 8d214048-546c-42d8-a97c-b9f62a207e7a
+23:38:07: ID smbios -  SMBIOS SystemSerialNumber - Before: G2HGCEZJ6Z
+23:38:07: ID smbios -  SMBIOS SystemSerialNumber - After: 6HT5E69788
+23:38:07: ID product -  Product ID - Before: 52864-64552-40582-W3
+23:38:07: ID product -  Product ID - After: 93714-52153-74972-C6
+23:38:07: ID bios_release -  BIOSReleaseDate - Before: 11/03/2023
+23:38:07: ID bios_release -  BIOSReleaseDate - After: 08/03/2023
+23:38:07: ID guid -  MachineId - Before: 7d1c1773-7839-4ecb-a120-559a3ced261f
+23:38:07: ID guid -  MachineId - After: 8cf05e67-cb5d-4e9f-b65d-132e6dad4005

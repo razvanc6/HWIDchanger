@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {}
+    "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {
+    "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
+        "projectUniqueName": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
         "projectName": "SecHex-GUI",
-        "projectPath": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
+        "projectPath": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\SecHex-GUI.csproj",
         "packagesPath": "C:\\Users\\Razvan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Razvan\\Source\\Repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\obj\\",
+        "outputPath": "C:\\Users\\Razvan\\source\\repos\\SecHex-Spoofy\\SecHex-GUI\\SecHex-GUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -94,24 +94,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -120,7 +102,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,4 @@
+15:16:09: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: NVMe    Phison 512GB ESOH0.1, SerialNumber: 6479_A786_1A30_9D14.
+15:16:09: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Toshiba N300 8TB, SerialNumber: O0JWX6A2EY1W03
+15:16:09: ID guid -  HwProfileGuid - Before: de4f7acc-4b9f-410f-bd73-5174f9dee039
+15:16:09: ID guid -  HwProfileGuid - After: f7e13ef3-26ad-4a6a-9155-e8fb266cc6a0

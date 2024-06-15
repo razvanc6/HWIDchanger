@@ -1,0 +1,104 @@
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID guid -  HwProfileGuid - Before: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID guid -  HwProfileGuid - After: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID ChangeMachineGuid -  Machine GUID - Before: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID ChangeMachineGuid -  Machine GUID - After: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID display -  Display ID - Before: Display5
+03:13:26: ID display -  Display ID - After: Display5
+03:13:26: ID efi -  EFI Variable ID - Before: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID efi -  EFI Variable ID - After: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - Before: 6HT5E69789
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - After: 6HT5E69789
+03:13:26: ID product -  Product ID - Before: 93714-52153-74972-C7
+03:13:26: ID product -  Product ID - After: 93714-52153-74972-C7
+03:13:26: ID bios_release -  BIOSReleaseDate - Before: 09/03/2023
+03:13:26: ID bios_release -  BIOSReleaseDate - After: 09/03/2023
+03:13:26: ID guid -  MachineId - Before: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005
+03:13:26: ID guid -  MachineId - After: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID guid -  HwProfileGuid - Before: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID guid -  HwProfileGuid - After: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID ChangeMachineGuid -  Machine GUID - Before: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID ChangeMachineGuid -  Machine GUID - After: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID display -  Display ID - Before: Display5
+03:13:26: ID display -  Display ID - After: Display5
+03:13:26: ID efi -  EFI Variable ID - Before: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID efi -  EFI Variable ID - After: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - Before: 6HT5E69789
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - After: 6HT5E69789
+03:13:26: ID product -  Product ID - Before: 93714-52153-74972-C7
+03:13:26: ID product -  Product ID - After: 93714-52153-74972-C7
+03:13:26: ID bios_release -  BIOSReleaseDate - Before: 09/03/2023
+03:13:26: ID bios_release -  BIOSReleaseDate - After: 09/03/2023
+03:13:26: ID guid -  MachineId - Before: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005
+03:13:26: ID guid -  MachineId - After: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID guid -  HwProfileGuid - Before: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID guid -  HwProfileGuid - After: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID ChangeMachineGuid -  Machine GUID - Before: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID ChangeMachineGuid -  Machine GUID - After: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID display -  Display ID - Before: Display5
+03:13:26: ID display -  Display ID - After: Display5
+03:13:26: ID efi -  EFI Variable ID - Before: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID efi -  EFI Variable ID - After: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - Before: 6HT5E69789
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - After: 6HT5E69789
+03:13:26: ID product -  Product ID - Before: 93714-52153-74972-C7
+03:13:26: ID product -  Product ID - After: 93714-52153-74972-C7
+03:13:26: ID bios_release -  BIOSReleaseDate - Before: 09/03/2023
+03:13:26: ID bios_release -  BIOSReleaseDate - After: 09/03/2023
+03:13:26: ID guid -  MachineId - Before: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005
+03:13:26: ID guid -  MachineId - After: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: QATL2BAN8JP56C
+03:13:26: ID guid -  HwProfileGuid - Before: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID guid -  HwProfileGuid - After: 2a8c1613-151e-49db-88d7-ae3945da90bc
+03:13:26: ID ChangeMachineGuid -  Machine GUID - Before: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID ChangeMachineGuid -  Machine GUID - After: 3644z035-o730-w350-k112-w6081s14
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: F2-D6-E8-9D-14-A4
+03:13:26: ID mac -  MAC Address: Restarting NetAdapter...
+03:13:26: ID mac -  MAC Address: NetAdapter restartet.
+03:13:26: ID display -  Display ID - Before: Display5
+03:13:26: ID display -  Display ID - After: Display5
+03:13:26: ID efi -  EFI Variable ID - Before: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID efi -  EFI Variable ID - After: 8d214048-546c-42d8-a97c-b9f62a207e7b
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - Before: 6HT5E69789
+03:13:26: ID smbios -  SMBIOS SystemSerialNumber - After: 6HT5E69789
+03:13:26: ID product -  Product ID - Before: 93714-52153-74972-C7
+03:13:26: ID product -  Product ID - After: 93714-52153-74972-C7
+03:13:26: ID bios_release -  BIOSReleaseDate - Before: 09/03/2023
+03:13:26: ID bios_release -  BIOSReleaseDate - After: 09/03/2023
+03:13:26: ID guid -  MachineId - Before: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005
+03:13:26: ID guid -  MachineId - After: 8cf05e68-cb5d-4e9f-b65d-132e6dad4005

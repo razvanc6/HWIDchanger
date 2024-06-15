@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecHex")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5bc1ea396435519c964043d3b77e4595fa82409")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b24781437d5539ecc882df0346c84b81406e8bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Spoofy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecHex-GUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

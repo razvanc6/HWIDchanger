@@ -1,0 +1,26 @@
+15:16:17: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Toshiba N300 8TB, SerialNumber: O0JWX6A2EY1W03
+15:16:17: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: WD Blue 2TB, SerialNumber: 58FLWW4Q9LMD60
+15:16:17: ID guid -  HwProfileGuid - Before: f7e13ef3-26ad-4a6a-9155-e8fb266cc6a0
+15:16:17: ID guid -  HwProfileGuid - After: f6fd9f62-0233-4507-8e6d-05a5cb3208c9
+15:16:17: ID ChangeMachineGuid -  Machine GUID - Before: 1057m193-u703-t069-s790-r4239p04
+15:16:17: ID ChangeMachineGuid -  Machine GUID - After: 2686b894-w774-q871-x322-i4089k73
+15:16:17: ID mac -  MAC Address {DBCEACEE-686C-4BB1-97F5-7C2F3965CD06} - Before: DA-8C-6D-5B-C6-E9
+15:16:17: ID mac -  MAC Address {DBCEACEE-686C-4BB1-97F5-7C2F3965CD06} - After: FA-39-43-51-8D-03
+15:16:17: ID mac -  MAC Address: Restarting NetAdapter...
+15:16:17: ID mac -  MAC Address: NetAdapter restartet.
+15:16:17: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: 6E-FD-6C-8E-50-E7
+15:16:17: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: 5A-D7-0C-F7-B7-E8
+15:16:17: ID mac -  MAC Address: Restarting NetAdapter...
+15:16:17: ID mac -  MAC Address: NetAdapter restartet.
+15:16:17: ID display -  Display ID - Before: Display5
+15:16:17: ID display -  Display ID - After: 4
+15:16:17: ID efi -  EFI Variable ID - Before: 91648ed5-5bc7-40de-ac41-0fc763a04600
+15:16:17: ID efi -  EFI Variable ID - After: b82b4baf-648d-44c9-a017-cbcc91fb7151
+15:16:17: ID smbios -  SMBIOS SystemSerialNumber - Before: LY14XKYTUT
+15:16:17: ID smbios -  SMBIOS SystemSerialNumber - After: MHKGVJF6GN
+15:16:17: ID product -  Product ID - Before: 41037-04571-75312-L6
+15:16:17: ID product -  Product ID - After: 32799-96477-60816-P1
+15:16:17: ID bios_release -  BIOSReleaseDate - Before: 26/02/2023
+15:16:17: ID bios_release -  BIOSReleaseDate - After: 28/02/2023
+15:16:17: ID guid -  MachineId - Before: be0f2012-981c-4ad9-9ae7-d7e130414651
+15:16:17: ID guid -  MachineId - After: 4a753b9d-68c7-42d9-91ca-c745475e26e5

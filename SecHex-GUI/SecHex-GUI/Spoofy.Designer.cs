@@ -39,7 +39,6 @@
             req = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             spoofall = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             profile1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            backup = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             systemcleaner = new MetroFramework.Controls.MetroCheckBox();
             logwind = new MetroFramework.Controls.MetroCheckBox();
             profile6 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
@@ -288,30 +287,6 @@
             profile1.Text = "Profil 1";
             profile1.Click += profile1_click;
             // 
-            // backup
-            // 
-            backup.Animated = true;
-            backup.AutoRoundedCorners = true;
-            backup.BackColor = Color.Transparent;
-            backup.BorderColor = Color.White;
-            backup.BorderRadius = 15;
-            backup.BorderThickness = 1;
-            backup.CustomBorderColor = Color.Transparent;
-            backup.DisabledState.BorderColor = Color.DarkGray;
-            backup.DisabledState.CustomBorderColor = Color.DarkGray;
-            backup.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            backup.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            backup.FillColor = Color.Transparent;
-            backup.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            backup.ForeColor = Color.White;
-            backup.Location = new Point(338, 121);
-            backup.Name = "backup";
-            backup.PressedDepth = 60;
-            backup.Size = new Size(157, 32);
-            backup.TabIndex = 19;
-            backup.Text = "BACKUP";
-            backup.Click += backup_Click;
-            // 
             // systemcleaner
             // 
             systemcleaner.AutoSize = true;
@@ -406,7 +381,6 @@
             Controls.Add(profile6);
             Controls.Add(logwind);
             Controls.Add(systemcleaner);
-            Controls.Add(backup);
             Controls.Add(profile1);
             Controls.Add(spoofall);
             Controls.Add(req);
@@ -440,7 +414,6 @@
         private Siticone.Desktop.UI.WinForms.SiticoneButton req;
         private Siticone.Desktop.UI.WinForms.SiticoneButton spoofall;
         private Siticone.Desktop.UI.WinForms.SiticoneButton profile1;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton backup;
         private MetroFramework.Controls.MetroCheckBox systemcleaner;
         private MetroFramework.Controls.MetroCheckBox logwind;
         private Siticone.Desktop.UI.WinForms.SiticoneButton profile6;

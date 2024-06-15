@@ -35,9 +35,57 @@ namespace SecHex_GUI
         string globalGUID = null;
         string globalMachineGuid = null;
         string globalSerialNumberKey = null;
+
+        string globalMac = null;
+        string globalAdapterId = null;
+        string globalDisplayId = null;
+        string globalEfiId = null;
+        string globalSystemSerialNumber = null; //bios
+        string globalProductID = null;
+        string globalBIOSReleaseDate = null;
+        string globalMachineID = null;
+
+
         private bool isAfricaToggleOn = false;
         private south_africa WindowSouthAfrica;
         private logs logWindow;
+
+        private void spoofall_Click(object sender, EventArgs e)
+        {
+            bool registryEntriesExist = false;
+
+            try
+            {
+                req_Click(sender, e);
+                registryEntriesExist = true;
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("Error executing functions: " + ex.Message, NotificationType.Error);
+            }
+
+            if (registryEntriesExist)
+            {
+                disk_Click(sender, e); //asta
+                GUID_Click(sender, e); //asta
+                winid_Click(sender, e); //asta
+                mac_Click(sender, e);
+                display_Click(sender, e);
+                efi_Click(sender, e);
+                siticoneButton1_Click(sender, e);
+                product_Click(sender, e);
+                BIOSReleaseDate_Click(sender, e);
+                MachineId_Click(sender, e);
+                profile_Save(sender, e);
+                ShowNotification("All functions executed successfully.", NotificationType.Success);
+            }
+            else
+            {
+                ShowNotification("Error: One or more required registry entries are missing.", NotificationType.Error);
+            }
+        }
+
+
 
         private void OpenAfrica()
         {
@@ -173,38 +221,128 @@ namespace SecHex_GUI
             return result;
         }
 
-
-        private void spoofall_Click(object sender, EventArgs e)
+        private string RandomIdprid(int length)
         {
-            bool registryEntriesExist = false;
+            const string digits = "0123456789";
+            const string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var random = new Random();
+            var id = new char[length];
+            int dashIndex = 5;
+            int letterIndex = 17;
+            for (int i = 0; i < length; i++)
+            {
+                if (i == dashIndex)
+                {
+                    id[i] = '-';
+                    dashIndex += 6;
+                }
+                else if (i == letterIndex)
+                {
+                    id[i] = letters[random.Next(letters.Length)];
+                }
+                else if (i == letterIndex + 1)
+                {
+                    id[i] = letters[random.Next(letters.Length)];
+                }
+                else
+                {
+                    id[i] = digits[random.Next(digits.Length)];
+                }
+            }
+            return new string(id);
+        }
 
+        private void product_Click(object sender, EventArgs e)
+        {
             try
             {
-                req_Click(sender, e);
-                registryEntriesExist = true;
+                using (RegistryKey productKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", true))
+                {
+                    if (productKey != null)
+                    {
+                        string originalProductId = productKey.GetValue("ProductId")?.ToString();
+
+                        string newProductId = RandomIdprid(20);
+                        productKey.SetValue("ProductId", newProductId);
+
+                        string logBefore = "Product ID - Before: " + originalProductId;
+                        string logAfter = "Product ID - After: " + newProductId;
+                        SaveLogs("product", logBefore, logAfter);
+                        globalProductID = newProductId;
+                        ShowNotification("Product ID successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("Product registry key not found.", NotificationType.Error);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                ShowNotification("Error executing functions: " + ex.Message, NotificationType.Error);
-            }
-
-            if (registryEntriesExist)
-            {
-                disk_Click(sender, e); //asta
-                GUID_Click(sender, e); //asta
-                winid_Click(sender, e); //asta
-                profile_Save(sender, e);
-
-
-
-                ShowNotification("All functions executed successfully.", NotificationType.Success);
-            }
-            else
-            {
-                ShowNotification("Error: One or more required registry entries are missing.", NotificationType.Error);
+                ShowNotification("An error occurred while changing the Product ID: " + ex.Message, NotificationType.Error);
             }
         }
 
+
+        private void siticoneButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (RegistryKey smbiosData = Registry.LocalMachine.OpenSubKey("HARDWARE\\DESCRIPTION\\System\\BIOS", true))
+                {
+                    if (smbiosData != null)
+                    {
+                        string serialNumberBefore = smbiosData.GetValue("SystemSerialNumber")?.ToString();
+                        string newSerialNumber = RandomId(10);
+                        smbiosData.SetValue("SystemSerialNumber", newSerialNumber);
+                        string logBefore = "SMBIOS SystemSerialNumber - Before: " + serialNumberBefore;
+                        string logAfter = "SMBIOS SystemSerialNumber - After: " + newSerialNumber;
+                        SaveLogs("smbios", logBefore, logAfter);
+                        globalSystemSerialNumber = newSerialNumber;
+                        ShowNotification("SMBIOS successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("SMBIOS data registry key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while executing the SMBIOS Function: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+
+        private void efi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (RegistryKey efiVariables = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\Nsi\\{eb004a03-9b1a-11d4-9123-0050047759bc}\\26", true))
+                {
+                    if (efiVariables != null)
+                    {
+                        string efiVariableIdBefore = efiVariables.GetValue("VariableId")?.ToString();
+
+                        string newEfiVariableId = Guid.NewGuid().ToString();
+                        efiVariables.SetValue("VariableId", newEfiVariableId);
+                        string logBefore = "EFI Variable ID - Before: " + efiVariableIdBefore;
+                        string logAfter = "EFI Variable ID - After: " + newEfiVariableId;
+                        SaveLogs("efi", logBefore, logAfter);
+                        globalEfiId = newEfiVariableId;
+                        ShowNotification("EFI successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("EFI variables registry key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while executing the EFI Function: " + ex.Message, NotificationType.Error);
+            }
+        }
 
         private List<string> diskNames = new List<string>()
 {
@@ -381,6 +519,8 @@ namespace SecHex_GUI
                                     SaveLogs("mac", logBefore, logAfter);
                                     NetworkAdapter.SetValue("NetworkAddress", macAfter);
                                     RestartNetworkAdapter(adapterId);
+                                    globalMac = macAfter;
+                                    globalAdapterId = adapterId;
                                 }
                             }
                         }
@@ -445,6 +585,35 @@ namespace SecHex_GUI
             }
         }
 
+        private void MachineId_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (RegistryKey MachineId = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\SQMClient", true))
+                {
+                    if (MachineId != null)
+                    {
+                        string logBefore = "MachineId - Before: " + MachineId.GetValue("MachineId");
+                        MachineId.DeleteValue("MachineId");
+                        string newguid = Guid.NewGuid().ToString();
+                        MachineId.SetValue("MachineId", newguid);
+                        string logAfter = "MachineId - After: " + MachineId.GetValue("MachineId");
+                        SaveLogs("guid", logBefore, logAfter);
+                        globalMachineID = newguid;
+                        ShowNotification("MachineID successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("MachineId key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred: " + ex.Message, NotificationType.Error);
+            }
+        }
+
 
         private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         private static readonly Random random = new Random();
@@ -454,7 +623,7 @@ namespace SecHex_GUI
             return (long)(dateTime - UnixEpoch).TotalSeconds;
         }
 
-        private static DateTime GetRandomDateTime(int maxDateYears = 6)
+        private static DateTime GetRandomDateTime(int maxDateYears = 2)
         {
             DateTime now = DateTime.UtcNow;
             DateTime minTime = now.AddYears(-maxDateYears);
@@ -467,6 +636,114 @@ namespace SecHex_GUI
             return UnixEpoch.AddSeconds(randomUnixTime);
         }
 
+        private void BIOSReleaseDate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (RegistryKey systemInfoKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\SystemInformation", true))
+                {
+                    if (systemInfoKey != null)
+                    {
+                        var dateTimeBebe = GetRandomDateTime();
+
+                        string logBefore = "BIOSReleaseDate - Before: " + systemInfoKey.GetValue("BIOSReleaseDate");
+                        systemInfoKey.SetValue("BIOSReleaseDate", dateTimeBebe.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture));
+                        string logAfter = "BIOSReleaseDate - After: " + systemInfoKey.GetValue("BIOSReleaseDate");
+                        SaveLogs("bios_release", logBefore, logAfter);
+                        globalBIOSReleaseDate = dateTimeBebe.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        ShowNotification("BiosRelease successfully updated.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("SystemInformation key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+
+        private void pcname_Save(string newName_saved)
+        {
+            try
+            {
+                string originalName;
+                string newName = newName_saved;
+                using (RegistryKey computerNameKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\ComputerName\\ComputerName", true))
+                {
+                    if (computerNameKey != null)
+                    {
+                        originalName = computerNameKey.GetValue("ComputerName").ToString();
+
+                        computerNameKey.SetValue("ComputerName", newName);
+                        computerNameKey.SetValue("ActiveComputerName", newName);
+                        computerNameKey.SetValue("ComputerNamePhysicalDnsDomain", "");
+                    }
+                    else
+                    {
+                        ShowNotification("ComputerName key not found.", NotificationType.Error);
+                        return;
+                    }
+                }
+                using (RegistryKey activeComputerNameKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\ComputerName\\ActiveComputerName", true))
+                {
+                    if (activeComputerNameKey != null)
+                    {
+                        activeComputerNameKey.SetValue("ComputerName", newName);
+                        activeComputerNameKey.SetValue("ActiveComputerName", newName);
+                        activeComputerNameKey.SetValue("ComputerNamePhysicalDnsDomain", "");
+                    }
+                    else
+                    {
+                        ShowNotification("ActiveComputerName key not found.", NotificationType.Error);
+                        return;
+                    }
+                }
+                using (RegistryKey hostnameKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters", true))
+                {
+                    if (hostnameKey != null)
+                    {
+                        hostnameKey.SetValue("Hostname", newName);
+                        hostnameKey.SetValue("NV Hostname", newName);
+                    }
+                    else
+                    {
+                        ShowNotification("Hostname key not found.", NotificationType.Error);
+                        return;
+                    }
+                }
+                using (RegistryKey interfacesKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces", true))
+                {
+                    if (interfacesKey != null)
+                    {
+                        foreach (string interfaceName in interfacesKey.GetSubKeyNames())
+                        {
+                            using (RegistryKey interfaceKey = interfacesKey.OpenSubKey(interfaceName, true))
+                            {
+                                if (interfaceKey != null)
+                                {
+                                    interfaceKey.SetValue("Hostname", newName);
+                                    interfaceKey.SetValue("NV Hostname", newName);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                string logBefore = "ComputerName - Before: " + originalName;
+                string logAfter = "ComputerName - After: " + newName;
+                SaveLogs("pcname", logBefore, logAfter);
+                ShowNotification("PC-Name successfully spoofed.", NotificationType.Success);
+
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while spoofing the PC name: " + ex.Message, NotificationType.Error);
+            }
+        }
 
         private void winid_Click(object sender, EventArgs e)
         {
@@ -498,6 +775,45 @@ namespace SecHex_GUI
             }
         }
 
+        private void display_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RegistryKey displaySettings = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU", true);
+
+                if (displaySettings != null)
+                {
+                    string originalDisplayId = displaySettings.GetValue("MRU0")?.ToString();
+                    int displayId = RandomDisplayId();
+                    string spoofedDisplayId = $"Display{displayId}";
+                    displaySettings.SetValue("MRU0", spoofedDisplayId);
+                    displaySettings.SetValue("MRU1", spoofedDisplayId);
+                    displaySettings.SetValue("MRU2", spoofedDisplayId);
+                    displaySettings.SetValue("MRU3", spoofedDisplayId);
+                    displaySettings.SetValue("MRU4", spoofedDisplayId);
+
+                    string logBefore = "Display ID - Before: " + originalDisplayId;
+                    string logAfter = "Display ID - After: " + displayId;
+                    SaveLogs("display", logBefore, logAfter);
+                    globalDisplayId=spoofedDisplayId;
+                    ShowNotification("Display successfully spoofed.", NotificationType.Success);
+                }
+                else
+                {
+                    ShowNotification("Display settings registry key not found.", NotificationType.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while changing the display ID: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+        private int RandomDisplayId()
+        {
+            Random rnd = new Random();
+            return rnd.Next(1, 9);
+        }
 
         private void profile_Save(object sender, EventArgs e)
         {
@@ -512,7 +828,9 @@ namespace SecHex_GUI
                 List<string> lines = new List<string>();
                 lines = File.ReadAllLines(filePath).ToList();
 
-                lines.Add($"{globalSerialNumber},{globalIdentifier},{globalSerialNumberKey},{globalGUID},{globalMachineGuid}");
+                lines.Add($"{globalSerialNumber},{globalIdentifier},{globalSerialNumberKey},{globalGUID}," +
+                    $"{globalMachineGuid},{globalMac},{globalAdapterId},{globalDisplayId},{globalEfiId}," +
+                    $"{globalSystemSerialNumber},{globalProductID},{globalBIOSReleaseDate},{globalMachineID}");
                 File.WriteAllLines(filePath, lines);
 
             }
@@ -521,25 +839,7 @@ namespace SecHex_GUI
                 MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void backup_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string backupFolder = Path.Combine(programDirectory, "Backup");
-                string backupPath = Path.Combine(backupFolder, "backup.reg");
-                Directory.CreateDirectory(backupFolder);
-                Process.Start("reg", $"export HKEY_LOCAL_MACHINE\\SYSTEM \"{backupPath}\" /y").WaitForExit();
-                Process.Start("reg", $"export HKEY_LOCAL_MACHINE\\HARDWARE \"{backupPath}\" /y").WaitForExit();
-                Process.Start("reg", $"export HKEY_LOCAL_MACHINE\\SOFTWARE \"{backupPath}\" /y").WaitForExit();
 
-                MessageBox.Show("Registry backup created successfully.", "Backup Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while creating the registry backup: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void req_Click(object sender, EventArgs e)
         {
@@ -649,22 +949,6 @@ namespace SecHex_GUI
 
                 label.ForeColor = Color.FromArgb(255, currentR, currentG, currentB);
                 await Task.Delay(delay);
-            }
-        }
-
-        //temp 
-        private MessageBoxIcon GetNotificationIcon(NotificationType type)
-        {
-            switch (type)
-            {
-                case NotificationType.Success:
-                    return MessageBoxIcon.Information;
-                case NotificationType.Error:
-                    return MessageBoxIcon.Error;
-                case NotificationType.Warning:
-                    return MessageBoxIcon.Warning;
-                default:
-                    return MessageBoxIcon.None;
             }
         }
 
@@ -862,6 +1146,235 @@ namespace SecHex_GUI
                 ShowNotification("An error occurred while changing the machine GUID: " + ex.Message, NotificationType.Error);
             }
         }
+
+        private void mac_Save(string savedMac,string savedAdapterId)
+        {
+            try
+            {
+                bool spoofSuccess = SpoofMAC_saved(savedMac,savedAdapterId);
+
+                if (!spoofSuccess)
+                {
+                    ShowNotification("MAC address successfully spoofed.", NotificationType.Success);
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while spoofing the MAC address: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+        private bool SpoofMAC_saved(string savedMac,string savedAdapterId)
+        {
+            bool err = false;
+
+            using (RegistryKey NetworkAdapters = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e972-e325-11ce-bfc1-08002be10318}"))
+            {
+                foreach (string adapter in NetworkAdapters.GetSubKeyNames())
+                {
+                    if (adapter != "Properties")
+                    {
+                        try
+                        {
+                            using (RegistryKey NetworkAdapter = Registry.LocalMachine.OpenSubKey($"SYSTEM\\CurrentControlSet\\Control\\Class\\{{4d36e972-e325-11ce-bfc1-08002be10318}}\\{adapter}", true))
+                            {
+                                if (NetworkAdapter.GetValue("BusType") != null)
+                                {
+                                    string adapterId = savedAdapterId;
+                                    string macBefore = NetworkAdapter.GetValue("NetworkAddress")?.ToString();
+                                    string macAfter = savedMac;
+                                    string logBefore = $"MAC Address {adapterId} - Before: {macBefore}";
+                                    string logAfter = $"MAC Address {adapterId} - After: {macAfter}";
+                                    SaveLogs("mac", logBefore, logAfter);
+                                    NetworkAdapter.SetValue("NetworkAddress", macAfter);
+                                    RestartNetworkAdapter(adapterId);
+                                }
+                            }
+                        }
+                        catch (System.Security.SecurityException)
+                        {
+                            err = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return err;
+        }
+
+
+        private void display_Save(string savedDisplayID)
+        {
+            try
+            {
+                RegistryKey displaySettings = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU", true);
+
+                if (displaySettings != null)
+                {
+                    string originalDisplayId = displaySettings.GetValue("MRU0")?.ToString();
+                    string spoofedDisplayId = $"{savedDisplayID}";
+                    displaySettings.SetValue("MRU0", spoofedDisplayId);
+                    displaySettings.SetValue("MRU1", spoofedDisplayId);
+                    displaySettings.SetValue("MRU2", spoofedDisplayId);
+                    displaySettings.SetValue("MRU3", spoofedDisplayId);
+                    displaySettings.SetValue("MRU4", spoofedDisplayId);
+                    string logBefore = "Display ID - Before: " + originalDisplayId;
+                    string logAfter = "Display ID - After: " + spoofedDisplayId;
+                    SaveLogs("display", logBefore, logAfter);
+                    ShowNotification("Display successfully spoofed.", NotificationType.Success);
+                }
+                else
+                {
+                    ShowNotification("Display settings registry key not found.", NotificationType.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while changing the display ID: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+        private void efi_Save(string savedEfiId)
+        {
+            try
+            {
+                using (RegistryKey efiVariables = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\Nsi\\{eb004a03-9b1a-11d4-9123-0050047759bc}\\26", true))
+                {
+                    if (efiVariables != null)
+                    {
+                        string efiVariableIdBefore = efiVariables.GetValue("VariableId")?.ToString();
+                        string newEfiVariableId = savedEfiId;
+                        efiVariables.SetValue("VariableId", newEfiVariableId);
+                        string logBefore = "EFI Variable ID - Before: " + efiVariableIdBefore;
+                        string logAfter = "EFI Variable ID - After: " + newEfiVariableId;
+                        SaveLogs("efi", logBefore, logAfter);
+                        ShowNotification("EFI successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("EFI variables registry key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while executing the EFI Function: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+        private void siticoneButton1_Save(string savedSystemSerial)
+        {
+            try
+            {
+                using (RegistryKey smbiosData = Registry.LocalMachine.OpenSubKey("HARDWARE\\DESCRIPTION\\System\\BIOS", true))
+                {
+                    if (smbiosData != null)
+                    {
+                        string serialNumberBefore = smbiosData.GetValue("SystemSerialNumber")?.ToString();
+                        string newSerialNumber = savedSystemSerial;
+                        smbiosData.SetValue("SystemSerialNumber", newSerialNumber);
+                        string logBefore = "SMBIOS SystemSerialNumber - Before: " + serialNumberBefore;
+                        string logAfter = "SMBIOS SystemSerialNumber - After: " + newSerialNumber;
+                        SaveLogs("smbios", logBefore, logAfter);
+                        ShowNotification("SMBIOS successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("SMBIOS data registry key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while executing the SMBIOS Function: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+        private void product_Save(string savedProductID)
+        {
+            try
+            {
+                using (RegistryKey productKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", true))
+                {
+                    if (productKey != null)
+                    {
+                        string originalProductId = productKey.GetValue("ProductId")?.ToString();
+                        string newProductId = savedProductID;
+                        productKey.SetValue("ProductId", newProductId);
+                        string logBefore = "Product ID - Before: " + originalProductId;
+                        string logAfter = "Product ID - After: " + newProductId;
+                        SaveLogs("product", logBefore, logAfter);
+                        ShowNotification("Product ID successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("Product registry key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred while changing the Product ID: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+        private void BIOSReleaseDate_Save(string savedBiosReleaseDate)
+        {
+            try
+            {
+                using (RegistryKey systemInfoKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\SystemInformation", true))
+                {
+                    if (systemInfoKey != null)
+                    {
+                        var dateTimeBebe = savedBiosReleaseDate;
+                        string logBefore = "BIOSReleaseDate - Before: " + systemInfoKey.GetValue("BIOSReleaseDate");
+                        systemInfoKey.SetValue("BIOSReleaseDate", dateTimeBebe);
+                        string logAfter = "BIOSReleaseDate - After: " + systemInfoKey.GetValue("BIOSReleaseDate");
+                        SaveLogs("bios_release", logBefore, logAfter);
+                        ShowNotification("BiosRelease successfully updated.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("SystemInformation key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+        private void MachineId_Save(string savedMachineID)
+        {
+            try
+            {
+                using (RegistryKey MachineId = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\SQMClient", true))
+                {
+                    if (MachineId != null)
+                    {
+                        string logBefore = "MachineId - Before: " + MachineId.GetValue("MachineId");
+                        MachineId.DeleteValue("MachineId");
+                        string newguid = savedMachineID;
+                        MachineId.SetValue("MachineId", newguid);
+                        string logAfter = "MachineId - After: " + MachineId.GetValue("MachineId");
+                        SaveLogs("guid", logBefore, logAfter);
+                        ShowNotification("MachineID successfully spoofed.", NotificationType.Success);
+                    }
+                    else
+                    {
+                        ShowNotification("MachineId key not found.", NotificationType.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowNotification("An error occurred: " + ex.Message, NotificationType.Error);
+            }
+        }
+
+
         private void profile1_click(object sender, EventArgs e)
         {
             try
@@ -879,6 +1392,15 @@ namespace SecHex_GUI
                 disk_Save(words[0], words[1], words[2]);
                 GUID_Save(words[3]);
                 winid_Save(words[4]);
+                mac_Save(words[5], words[6]);
+                display_Save(words[7]);
+                efi_Save(words[8]);
+                siticoneButton1_Save(words[9]);
+                product_Save(words[10]);
+                BIOSReleaseDate_Save(words[11]);
+                MachineId_Save(words[12]);
+                pcname_Save(words[13]);
+
             }
             catch (Exception ex)
             {
@@ -903,6 +1425,15 @@ namespace SecHex_GUI
                 disk_Save(words[0], words[1], words[2]);
                 GUID_Save(words[3]);
                 winid_Save(words[4]);
+                mac_Save(words[5], words[6]);
+                display_Save(words[7]);
+                efi_Save(words[8]);
+                siticoneButton1_Save(words[9]);
+                product_Save(words[10]);
+                BIOSReleaseDate_Save(words[11]);
+                MachineId_Save(words[12]);
+                pcname_Save(words[13]);
+
             }
             catch (Exception ex)
             {
@@ -927,6 +1458,13 @@ namespace SecHex_GUI
                 disk_Save(words[0], words[1], words[2]);
                 GUID_Save(words[3]);
                 winid_Save(words[4]);
+                mac_Save(words[5], words[6]);
+                display_Save(words[7]);
+                efi_Save(words[8]);
+                siticoneButton1_Save(words[9]);
+                product_Save(words[10]);
+                BIOSReleaseDate_Save(words[11]);
+                MachineId_Save(words[12]);
             }
             catch (Exception ex)
             {
@@ -951,6 +1489,13 @@ namespace SecHex_GUI
                 disk_Save(words[0], words[1], words[2]);
                 GUID_Save(words[3]);
                 winid_Save(words[4]);
+                mac_Save(words[5], words[6]);
+                display_Save(words[7]);
+                efi_Save(words[8]);
+                siticoneButton1_Save(words[9]);
+                product_Save(words[10]);
+                BIOSReleaseDate_Save(words[11]);
+                MachineId_Save(words[12]);
             }
             catch (Exception ex)
             {
@@ -975,6 +1520,13 @@ namespace SecHex_GUI
                 disk_Save(words[0], words[1], words[2]);
                 GUID_Save(words[3]);
                 winid_Save(words[4]);
+                mac_Save(words[5], words[6]);
+                display_Save(words[7]);
+                efi_Save(words[8]);
+                siticoneButton1_Save(words[9]);
+                product_Save(words[10]);
+                BIOSReleaseDate_Save(words[11]);
+                MachineId_Save(words[12]);
             }
             catch (Exception ex)
             {
@@ -999,6 +1551,13 @@ namespace SecHex_GUI
                 disk_Save(words[0], words[1], words[2]);
                 GUID_Save(words[3]);
                 winid_Save(words[4]);
+                mac_Save(words[5], words[6]);
+                display_Save(words[7]);
+                efi_Save(words[8]);
+                siticoneButton1_Save(words[9]);
+                product_Save(words[10]);
+                BIOSReleaseDate_Save(words[11]);
+                MachineId_Save(words[12]);
             }
             catch (Exception ex)
             {

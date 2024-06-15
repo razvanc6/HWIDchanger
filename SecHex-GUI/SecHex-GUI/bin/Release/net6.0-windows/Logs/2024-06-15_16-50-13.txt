@@ -1,0 +1,14 @@
+16:50:13: ID display -  Display ID - Before: Display4
+16:50:13: ID display -  Display ID - After: Display5
+16:50:13: ID efi -  EFI Variable ID - Before: b82b4baf-648d-44c9-a017-cbcc91fb7151
+16:50:13: ID efi -  EFI Variable ID - After: 91648ed5-5bc7-40de-ac41-0fc763a04600
+16:50:13: ID smbios -  SMBIOS SystemSerialNumber - Before: MHKGVJF6GN
+16:50:13: ID smbios -  SMBIOS SystemSerialNumber - After: LY14XKYTUT
+16:50:13: ID product -  Product ID - Before: 32799-96477-60816-P1
+16:50:13: ID product -  Product ID - After: 41037-04571-75312-L6
+16:50:13: ID bios_release -  BIOSReleaseDate - Before: 28/02/2023
+16:50:13: ID bios_release -  BIOSReleaseDate - After: 26/02/2023
+16:50:13: ID guid -  MachineId - Before: 4a753b9d-68c7-42d9-91ca-c745475e26e5
+16:50:13: ID guid -  MachineId - After: be0f2012-981c-4ad9-9ae7-d7e130414651
+16:50:13: ID pcname -  ComputerName - Before: RazvanL
+16:50:13: ID pcname -  ComputerName - After: RazvanPC

@@ -1,0 +1,28 @@
+16:53:02: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Toshiba N300 8TB, SerialNumber: O0JWX6A2EY1W03
+16:53:02: ID disk -  DiskPeripheral Scsi Bus 0\Target Id 0\Logical Unit Id 0 - Identifier: Toshiba N300 8TB, SerialNumber: O0JWX6A2EY1W03
+16:53:02: ID guid -  HwProfileGuid - Before: f7e13ef3-26ad-4a6a-9155-e8fb266cc6a0
+16:53:02: ID guid -  HwProfileGuid - After: f7e13ef3-26ad-4a6a-9155-e8fb266cc6a0
+16:53:02: ID ChangeMachineGuid -  Machine GUID - Before: 1057m193-u703-t069-s790-r4239p04
+16:53:02: ID ChangeMachineGuid -  Machine GUID - After: 1057m193-u703-t069-s790-r4239p04
+16:53:02: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: 6E-FD-6C-8E-50-E7
+16:53:02: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: 6E-FD-6C-8E-50-E7
+16:53:02: ID mac -  MAC Address: Restarting NetAdapter...
+16:53:02: ID mac -  MAC Address: NetAdapter restartet.
+16:53:02: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - Before: 6E-FD-6C-8E-50-E7
+16:53:02: ID mac -  MAC Address {4B429890-9E73-4BEF-B0EF-A1B5EA932313} - After: 6E-FD-6C-8E-50-E7
+16:53:02: ID mac -  MAC Address: Restarting NetAdapter...
+16:53:02: ID mac -  MAC Address: NetAdapter restartet.
+16:53:02: ID display -  Display ID - Before: Display5
+16:53:02: ID display -  Display ID - After: Display5
+16:53:02: ID efi -  EFI Variable ID - Before: 91648ed5-5bc7-40de-ac41-0fc763a04600
+16:53:02: ID efi -  EFI Variable ID - After: 91648ed5-5bc7-40de-ac41-0fc763a04600
+16:53:02: ID smbios -  SMBIOS SystemSerialNumber - Before: LY14XKYTUT
+16:53:02: ID smbios -  SMBIOS SystemSerialNumber - After: LY14XKYTUT
+16:53:02: ID product -  Product ID - Before: 41037-04571-75312-L6
+16:53:02: ID product -  Product ID - After: 41037-04571-75312-L6
+16:53:02: ID bios_release -  BIOSReleaseDate - Before: 26/02/2023
+16:53:02: ID bios_release -  BIOSReleaseDate - After: 26/02/2023
+16:53:02: ID guid -  MachineId - Before: be0f2012-981c-4ad9-9ae7-d7e130414651
+16:53:02: ID guid -  MachineId - After: be0f2012-981c-4ad9-9ae7-d7e130414651
+16:53:02: ID pcname -  ComputerName - Before: RazvanPC
+16:53:02: ID pcname -  ComputerName - After: RazvanPC

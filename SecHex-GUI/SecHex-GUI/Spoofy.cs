@@ -1465,6 +1465,7 @@ namespace SecHex_GUI
                 product_Save(words[10]);
                 BIOSReleaseDate_Save(words[11]);
                 MachineId_Save(words[12]);
+                pcname_Save(words[13]);
             }
             catch (Exception ex)
             {
@@ -1496,6 +1497,7 @@ namespace SecHex_GUI
                 product_Save(words[10]);
                 BIOSReleaseDate_Save(words[11]);
                 MachineId_Save(words[12]);
+                pcname_Save(words[13]);
             }
             catch (Exception ex)
             {
@@ -1527,6 +1529,7 @@ namespace SecHex_GUI
                 product_Save(words[10]);
                 BIOSReleaseDate_Save(words[11]);
                 MachineId_Save(words[12]);
+                pcname_Save(words[13]);
             }
             catch (Exception ex)
             {
@@ -1558,6 +1561,7 @@ namespace SecHex_GUI
                 product_Save(words[10]);
                 BIOSReleaseDate_Save(words[11]);
                 MachineId_Save(words[12]);
+                pcname_Save(words[13]);
             }
             catch (Exception ex)
             {
